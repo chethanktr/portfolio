@@ -142,7 +142,7 @@
             cursor: pointer;
         }
         
-        /* Hero Section - FIXED TEXT CONTRAST */
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
@@ -167,6 +167,15 @@
             position: relative;
         }
         
+        .profile-img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
         .hero h1 {
             color: white;
             margin-bottom: 15px;
@@ -174,7 +183,7 @@
         }
         
         .hero h2 {
-            color: white !important; /* Force white color */
+            color: white !important;
             font-size: 1.8rem;
             margin-bottom: 25px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -622,6 +631,11 @@
                 bottom: auto;
                 margin: 10px;
             }
+            
+            .profile-img {
+                width: 220px;
+                height: 220px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -683,6 +697,11 @@
                 max-width: 250px;
                 text-align: center;
             }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
         }
     </style>
 </head>
@@ -723,7 +742,8 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <i class="fas fa-user-tie" style="font-size: 200px; color: rgba(255,255,255,0.2);"></i>
+                    <!-- Replace "profile.jpg" with your actual image filename -->
+                    <img src="profile.jpg" alt="Chethan Kumar" class="profile-img">
                     <div class="tech-badge badge-1">AI Prompting</div>
                     <div class="tech-badge badge-2">Python Scripting</div>
                     <div class="tech-badge badge-3">Deployment</div>
