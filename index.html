@@ -441,6 +441,76 @@
         .skill-level-80 { width: 80%; }
         .skill-level-75 { width: 75%; }
         
+        /* Certifications Section */
+        .certifications-section {
+            background-color: var(--light-color);
+        }
+        
+        .certifications-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .certificate-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+        
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .certificate-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .certificate-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-right: 15px;
+        }
+        
+        .certificate-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .certificate-issuer {
+            color: var(--gray-color);
+            font-size: 1rem;
+        }
+        
+        .certificate-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 5px;
+            border: 1px solid var(--light-gray);
+            cursor: pointer;
+            transition: var(--transition);
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .certificate-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certificate-verify {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+        
         /* Experience Section */
         .timeline {
             position: relative;
@@ -702,6 +772,10 @@
                 width: 200px;
                 height: 200px;
             }
+            
+            .certificate-image {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -719,6 +793,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#tech-skills">Technical Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -927,6 +1002,72 @@
         </div>
     </section>
 
+    <!-- Certifications Section -->
+    <section class="certifications-section" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certifications</h2>
+            </div>
+            <div class="certifications-container">
+                <div class="certificate-item">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div>
+                            <h3 class="certificate-title">SQL Essential Training</h3>
+                            <p class="certificate-issuer">LinkedIn Learning | Issued 2024</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificate Image - Click to view on LinkedIn -->
+                    <!-- 
+                    IMPORTANT: 
+                    1. Save your certificate image as 'certificate.jpg' or 'certificate.png'
+                    2. Upload it to your GitHub repository
+                    3. The image will display here automatically
+                    -->
+                    <img src="certificate.jpg" alt="SQL Essential Training Certificate" class="certificate-image" 
+                         onclick="window.open('https://www.linkedin.com/learning/certificates/d358e5b2513b958064a60399289f1a8e929f76dc5093b6f459515342afd2ca49', '_blank')">
+                    
+                    <p class="certificate-verify">Click on the certificate to verify on LinkedIn</p>
+                    
+                    <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--light-gray);">
+                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">Skills Covered:</h4>
+                        <ul style="columns: 2; list-style: none; padding-left: 0;">
+                            <li><i class="fas fa-check" style="color: var(--tech-color); margin-right: 8px;"></i>SQL Query Writing</li>
+                            <li><i class="fas fa-check" style="color: var(--tech-color); margin-right: 8px;"></i>Database Design</li>
+                            <li><i class="fas fa-check" style="color: var(--tech-color); margin-right: 8px;"></i>Data Manipulation</li>
+                            <li><i class="fas fa-check" style="color: var(--tech-color); margin-right: 8px;"></i>Query Optimization</li>
+                            <li><i class="fas fa-check" style="color: var(--tech-color); margin-right: 8px;"></i>Data Analysis</li>
+                            <li><i class="fas fa-check" style="color: var(--tech-color); margin-right: 8px;"></i>Reporting</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Template for adding more certificates in the future -->
+                <!-- 
+                <div class="certificate-item">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div>
+                            <h3 class="certificate-title">Certificate Title Here</h3>
+                            <p class="certificate-issuer">Issuing Organization | Issued Date</p>
+                        </div>
+                    </div>
+                    
+                    <img src="certificate2.jpg" alt="Certificate Name" class="certificate-image" 
+                         onclick="window.open('LINK_TO_VERIFICATION', '_blank')">
+                    
+                    <p class="certificate-verify">Click on the certificate to verify</p>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
@@ -972,139 +1113,3 @@
                             <li>Developed automation scripts for common support scenarios</li>
                             <li>Managed deployment processes for client hosting environments</li>
                         </ul>
-                    </div>
-                    <div class="timeline-date">Jan 2014 - Dec 2021</div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>Technical Support Representative</h4>
-                        <span class="company">GlowTouch Technologies, Mangalore, India</span>
-                        <ul>
-                            <li>Resolved complex technical issues related to web hosting environments and server configurations</li>
-                            <li>Executed Unix commands for server monitoring and troubleshooting</li>
-                            <li>Assisted with deployment processes and environment setups</li>
-                            <li>Monitored hosting platforms in real time to anticipate outages</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-date">2009 - 2014</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Contact Me</h2>
-            </div>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div>
-                        <h3>Phone</h3>
-                        <p>+971 58 916 9518</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <h3>Email</h3>
-                        <p>chethan.ktr@gmail.com</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                        <h3>Location</h3>
-                        <p>Dubai, UAE (Employment Visa)</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <div>
-                        <h3>LinkedIn</h3>
-                        <p>linkedin.com/in/Chethanktry/</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/chethanktry/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:chethan.ktr@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-            <p class="copyright">&copy; 2023 Chethan Kumar. All Rights Reserved. | Operations, Customer Success & Technical Leadership</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-        
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Animate skill bars on scroll
-        const skillBars = document.querySelectorAll('.skill-level-bar');
-        
-        const animateSkillBars = () => {
-            skillBars.forEach(bar => {
-                const rect = bar.getBoundingClientRect();
-                if(rect.top < window.innerHeight - 100) {
-                    const width = bar.className.match(/skill-level-(\d+)/)[1];
-                    bar.style.width = `${width}%`;
-                }
-            });
-        };
-        
-        // Set initial width to 0
-        skillBars.forEach(bar => {
-            bar.style.width = '0%';
-        });
-        
-        window.addEventListener('scroll', animateSkillBars);
-        window.addEventListener('load', animateSkillBars);
-    </script>
-</body>
-</html>
