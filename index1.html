@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio | UAE Job Market</title>
+    <title>Chethan Kumar | Operations & Technical Leader</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -379,13 +379,13 @@
         }
         
         .certification-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 40px;
-            justify-items: center;
         }
         
-        .certification-item {
+        .certification-image-container {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
@@ -393,97 +393,18 @@
             transition: var(--transition);
             width: 100%;
             max-width: 500px;
+            cursor: pointer;
         }
         
-        .certification-item:hover {
+        .certification-image-container:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         
-        .certification-image {
+        .certification-image-container img {
             width: 100%;
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .certification-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .certification-item:hover .certification-image img {
-            transform: scale(1.05);
-        }
-        
-        .certification-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .certification-item:hover .certification-overlay {
-            opacity: 1;
-        }
-        
-        .view-certificate {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            transform: translateY(20px);
-        }
-        
-        .certification-item:hover .view-certificate {
-            transform: translateY(0);
-        }
-        
-        .certification-info {
-            padding: 25px;
-        }
-        
-        .certification-info h3 {
-            color: var(--secondary-color);
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-        
-        .certification-info p {
-            color: var(--gray-color);
-            margin-bottom: 15px;
-        }
-        
-        .certification-details {
-            list-style: none;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-        }
-        
-        .certification-details li {
-            padding: 8px 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .certification-details i {
-            color: var(--accent-color);
-            margin-right: 10px;
-            font-size: 0.9rem;
-            width: 20px;
+            height: auto;
+            display: block;
         }
         
         /* UAE Market Section */
@@ -662,6 +583,42 @@
             font-size: 0.9rem;
         }
         
+        /* Certificate Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 50px;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--primary-color);
+        }
+        
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero h1 {
@@ -677,7 +634,8 @@
             }
             
             .certification-grid {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
             }
         }
         
@@ -727,19 +685,21 @@
             .about-image img {
                 height: 300px;
             }
-            
-            .certification-image {
-                height: 200px;
-            }
         }
     </style>
 </head>
 <body>
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
     <!-- Header & Navigation -->
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">Chethan Kumar</span></a>
+                <a href="#" class="logo">Chethan<span>Kumar</span></a>
                 <button class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -803,7 +763,7 @@
                 </div>
                 <div class="about-image">
                     <!-- Using your uploaded profile photo -->
-                    <img src="profile.jpg" alt="Professional Headshot">
+                    <img src="profile.jpg" alt="Chethan Kumar - Professional Headshot">
                 </div>
             </div>
         </div>
@@ -918,42 +878,14 @@
             
             <div class="certifications-container">
                 <div class="certification-grid">
-                    <!-- Certificate 1 -->
-                    <div class="certification-item">
-                        <div class="certification-image">
-                            <img src="cert1.jpg" alt="Professional Certification 1">
-                            <div class="certification-overlay">
-                                <a href="cert1.jpg" class="view-certificate" target="_blank">View Full Certificate</a>
-                            </div>
-                        </div>
-                        <div class="certification-info">
-                            <h3>Professional Certification</h3>
-                            <p>This certification demonstrates expertise in key professional areas relevant to operations management and technical leadership.</p>
-                            <ul class="certification-details">
-                                <li><i class="fas fa-certificate"></i> Professional Certificate</li>
-                                <li><i class="fas fa-check-circle"></i> Valid and Active</li>
-                                <li><i class="fas fa-star"></i> Industry Recognized</li>
-                            </ul>
-                        </div>
+                    <!-- Certificate 1 - Click to view full size -->
+                    <div class="certification-image-container" onclick="openModal('cert1.jpg')">
+                        <img src="cert1.jpg" alt="Professional Certification 1">
                     </div>
                     
-                    <!-- Certificate 2 -->
-                    <div class="certification-item">
-                        <div class="certification-image">
-                            <img src="cert2.jpg" alt="Professional Certification 2">
-                            <div class="certification-overlay">
-                                <a href="cert2.jpg" class="view-certificate" target="_blank">View Full Certificate</a>
-                            </div>
-                        </div>
-                        <div class="certification-info">
-                            <h3>Advanced Technical Certification</h3>
-                            <p>This certification validates advanced technical skills and knowledge in specialized areas of technology and operations.</p>
-                            <ul class="certification-details">
-                                <li><i class="fas fa-certificate"></i> Technical Certification</li>
-                                <li><i class="fas fa-check-circle"></i> Valid and Active</li>
-                                <li><i class="fas fa-star"></i> Industry Recognized</li>
-                            </ul>
-                        </div>
+                    <!-- Certificate 2 - Click to view full size -->
+                    <div class="certification-image-container" onclick="openModal('cert2.jpg')">
+                        <img src="cert2.jpg" alt="Professional Certification 2">
                     </div>
                 </div>
             </div>
@@ -1012,18 +944,17 @@
                             </div>
                         </div>
                         <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>chethan.ktr@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
                             <i class="fas fa-language"></i>
                             <div>
                                 <h4>Languages</h4>
                                 <p>English, Hindi, Kannada</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div>
-                                <h4>Education</h4>
-                                <p>Bachelor of Commerce - Mangalore University (2012)</p>
-                                <p>Computer Operating & Programming - Govt. Industrial Training Institute (2005)</p>
                             </div>
                         </div>
                     </div>
@@ -1034,19 +965,19 @@
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" required>
+                            <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" required>
+                            <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" required>
+                            <input type="text" id="subject" name="subject" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" required></textarea>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
@@ -1059,18 +990,18 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <a href="#" class="footer-logo">Chethan Kumar</span></a>
+                <a href="#" class="footer-logo">Chethan<span>Kumar</span></a>
                 
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
+                    <!-- Only LinkedIn icon -->
+                    <a href="https://www.linkedin.com/in/chethanktry/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2026 Professional Portfolio. All rights reserved.</p>
+                <p>&copy; 2026 Chethan Kumar. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1095,12 +1026,26 @@
             });
         });
         
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
+        // Certificate Modal functionality
+        const modal = document.getElementById("certificateModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeModal = document.querySelector(".close-modal");
+        
+        function openModal(imageSrc) {
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+        }
+        
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
         
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1120,17 +1065,49 @@
             });
         });
         
-        // Certificate image modal functionality
-        document.querySelectorAll('.view-certificate').forEach(link => {
-            link.addEventListener('click', function(e) {
-                // Open in new tab (default behavior)
-                // If you want a modal instead, you can modify this
-                console.log('Opening certificate in new tab');
-            });
+        // Email form submission using Formspree
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submitBtn = this.querySelector('.btn');
+            const originalBtnText = submitBtn.textContent;
+            
+            // Change button to loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Using Formspree for email submission (free service)
+                const response = await fetch('https://formspree.io/f/xjvnkpjg', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('Thank you for your message! I will get back to you soon.');
+                    this.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Fallback: Open default email client
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                const mailtoLink = `mailto:chethan.ktr@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+                window.location.href = mailtoLink;
+            } finally {
+                // Reset button state
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
     </script>
 </body>
 </html>
-
-
-
