@@ -1,24 +1,1164 @@
-<!-- Copy this block and paste after the last certificate-slide -->
-<div class="certificate-slide">
-    <div class="certificate-header">
-        <div class="certificate-icon">
-            <i class="fas fa-certificate"></i> <!-- Change icon as needed -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio | UAE Job Market</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #CE1126; /* UAE flag red */
+            --secondary-color: #000000; /* UAE flag black */
+            --accent-color: #009739; /* UAE flag green */
+            --light-color: #F5F5F5;
+            --dark-color: #222222;
+            --text-color: #333333;
+            --gray-color: #777777;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 160px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .badge {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-item .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-item .label {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            background-color: #f9f9f9;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-10px);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .skill-items {
+            list-style: none;
+        }
+        
+        .skill-items li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .skill-items li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .skill-items li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 80px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-content h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content .company {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .timeline-content ul {
+            margin-left: 20px;
+        }
+        
+        .timeline-content li {
+            margin-bottom: 8px;
+        }
+        
+        /* Certifications Section */
+        .certifications-section {
+            background-color: #f9f9f9;
+        }
+        
+        .certifications-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .certification-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certification-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .certification-header i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .certification-header h3 {
+            color: white;
+            margin-bottom: 0;
+            font-size: 1.4rem;
+        }
+        
+        .certification-body {
+            padding: 25px;
+        }
+        
+        .certification-body p {
+            margin-bottom: 15px;
+            color: var(--gray-color);
+        }
+        
+        .certification-details {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .certification-details li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .certification-details li:last-child {
+            border-bottom: none;
+        }
+        
+        .certification-details i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .no-certifications {
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            grid-column: 1 / -1;
+        }
+        
+        .no-certifications i {
+            font-size: 3rem;
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .no-certifications h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* UAE Market Section */
+        .uae-market {
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            color: white;
+            text-align: center;
+        }
+        
+        .uae-market .section-title h2 {
+            color: white;
+        }
+        
+        .uae-market .section-title h2:after {
+            background-color: white;
+        }
+        
+        .uae-market-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .uae-market-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .uae-highlights {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .uae-highlight {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 10px;
+            width: 200px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .uae-highlight i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .uae-highlight h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background-color: #f1f1f1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: var(--shadow);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .certification-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Your<span>Portfolio</span></a>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <h3 class="certificate-title">Your Certificate Title</h3>
-        <p class="certificate-issuer">Issuing Organization | Issued Year</p>
-    </div>
-    
-    <!-- Image: cer5.JPG -->
-    <img src="cer5.JPG" alt="Certificate Description" class="certificate-image" 
-         onclick="window.open('YOUR_VERIFICATION_LINK', '_blank')">
-    
-    <div class="certificate-details">
-        <h4>Skills Covered:</h4>
-        <ul class="skills-list">
-            <li>Skill 1</li>
-            <li>Skill 2</li>
-            <li>Skill 3</li>
-            <!-- Add more skills as needed -->
-        </ul>
-    </div>
-</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Operations, Customer Success & Technical Leader</h1>
+            <p>Strategic professional with 14+ years of experience driving operational excellence, customer satisfaction, and scalable service delivery across technology-driven environments. Currently based in Dubai, UAE with employment visa.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+            
+            <div class="hero-badges">
+                <div class="badge">Operations Management</div>
+                <div class="badge">Customer Success</div>
+                <div class="badge">Technical Leadership</div>
+                <div class="badge">UAE Employment Visa</div>
+                <div class="badge">AI & Automation</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Strategic Leader Based in Dubai, UAE</h3>
+                    <p>I am a strategic operations and customer success leader with extensive experience in driving operational excellence, customer satisfaction, and scalable service delivery across technology-driven environments.</p>
+                    <p>Currently based in Dubai, UAE with an employment visa, I specialize in operations management, customer success, data governance, service delivery, and team leadership, with recent focus on data operations supporting machine learning pipelines and technical automation.</p>
+                    <p>My technical expertise extends to AI prompting, Python script execution, Unix command line operations, and deployment automation, which I leverage to optimize workflows and enhance operational efficiency.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="number">14+</span>
+                            <span class="label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">90%+</span>
+                            <span class="label">Quality Rating</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">4.65/5</span>
+                            <span class="label">CSAT Score</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <!-- Replace with your image or use placeholder -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Professional Headshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Competencies</h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Operations Management</h3>
+                    <ul class="skill-items">
+                        <li>Process Optimisation</li>
+                        <li>Service Management</li>
+                        <li>SLA Management</li>
+                        <li>Agile Operations & Systems</li>
+                        <li>Performance Management</li>
+                        <li>Quality Assurance</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Customer Success</h3>
+                    <ul class="skill-items">
+                        <li>Customer Journey Optimisation</li>
+                        <li>Contact Centre Management</li>
+                        <li>Loyalty Programs</li>
+                        <li>Cross-Functional Collaboration</li>
+                        <li>Client Onboarding</li>
+                        <li>Customer Analytics</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Technical & AI Skills</h3>
+                    <ul class="skill-items">
+                        <li>AI Prompting Expert</li>
+                        <li>Python Script Execution</li>
+                        <li>Unix Command Execution</li>
+                        <li>Deployment Automation</li>
+                        <li>Data Operations for ML</li>
+                        <li>Salesforce CRM, HRIS Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Work Experience</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 2024 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Operations Manager</h3>
+                        <span class="company">DTEK.ai, Dubai, UAE</span>
+                        <ul>
+                            <li>Architected and executed enterprise data strategies to improve data quality, accessibility, and security for ML pipelines</li>
+                            <li>Diagnosed inefficiencies across data pipelines and instituted best-practice workflows with automation scripting</li>
+                            <li>Leveraged AI prompting techniques to optimize data processing and model validation workflows</li>
+                            <li>Implemented Unix-based automation for data processing and deployment operations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Jul 2022 - Feb 2024</div>
+                    <div class="timeline-content">
+                        <h3>Customer Success Team Lead</h3>
+                        <span class="company">DTEK.ai, Dubai, UAE</span>
+                        <ul>
+                            <li>Steered a team of customer success specialists to consistently surpass satisfaction targets</li>
+                            <li>Utilized Python scripts for customer data analysis and feedback processing</li>
+                            <li>Integrated technical solutions with customer success workflows</li>
+                            <li>Applied AI tools for customer sentiment analysis and predictive support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2014 - Dec 2021</div>
+                    <div class="timeline-content">
+                        <h3>Team Lead - Technical Support</h3>
+                        <span class="company">GlowTouch Technologies, Mangalore, India</span>
+                        <ul>
+                            <li>Directed end-to-end technical support delivery, sustaining quality scores above 90%</li>
+                            <li>Implemented Unix-based monitoring and troubleshooting procedures</li>
+                            <li>Developed automation scripts for common support scenarios</li>
+                            <li>Managed deployment processes for client hosting environments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+            
+            <div class="certifications-container">
+                <div class="certification-grid">
+                    <!-- Certification 1 -->
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <i class="fas fa-certificate"></i>
+                            <h3>Project Management Professional (PMP)</h3>
+                        </div>
+                        <div class="certification-body">
+                            <p>Project Management Institute (PMI) - Globally recognized certification for project management professionals.</p>
+                            <ul class="certification-details">
+                                <li><i class="fas fa-calendar-alt"></i> Issued: 2023</li>
+                                <li><i class="fas fa-id-badge"></i> Credential ID: PMP123456</li>
+                                <li><i class="fas fa-globe"></i> Valid: Worldwide</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Certification 2 -->
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <i class="fas fa-robot"></i>
+                            <h3>AI & Machine Learning Specialization</h3>
+                        </div>
+                        <div class="certification-body">
+                            <p>DeepLearning.AI - Specialization covering machine learning, deep learning, and AI implementation strategies.</p>
+                            <ul class="certification-details">
+                                <li><i class="fas fa-calendar-alt"></i> Issued: 2023</li>
+                                <li><i class="fas fa-id-badge"></i> Credential ID: AI-ML-789</li>
+                                <li><i class="fas fa-clock"></i> Duration: 6 months</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Certification 3 -->
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Certified Scrum Master (CSM)</h3>
+                        </div>
+                        <div class="certification-body">
+                            <p>Scrum Alliance - Certification demonstrating expertise in Scrum methodologies and agile project management.</p>
+                            <ul class="certification-details">
+                                <li><i class="fas fa-calendar-alt"></i> Issued: 2022</li>
+                                <li><i class="fas fa-id-badge"></i> Credential ID: CSM-456789</li>
+                                <li><i class="fas fa-sync-alt"></i> Renewal: Every 2 years</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Certification 4 -->
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <i class="fas fa-cloud"></i>
+                            <h3>AWS Certified Solutions Architect</h3>
+                        </div>
+                        <div class="certification-body">
+                            <p>Amazon Web Services - Associate level certification for designing distributed systems on AWS platform.</p>
+                            <ul class="certification-details">
+                                <li><i class="fas fa-calendar-alt"></i> Issued: 2022</li>
+                                <li><i class="fas fa-id-badge"></i> Credential ID: AWS-SAA-123</li>
+                                <li><i class="fas fa-building"></i> Provider: Amazon Web Services</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Certification 5 -->
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <i class="fas fa-user-tie"></i>
+                            <h3>ITIL 4 Foundation</h3>
+                        </div>
+                        <div class="certification-body">
+                            <p>AXELOS - Foundation certification in IT Service Management framework for delivering effective IT services.</p>
+                            <ul class="certification-details">
+                                <li><i class="fas fa-calendar-alt"></i> Issued: 2021</li>
+                                <li><i class="fas fa-id-badge"></i> Credential ID: ITIL4-789012</li>
+                                <li><i class="fas fa-layer-group"></i> Level: Foundation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Certification 6 -->
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <i class="fas fa-database"></i>
+                            <h3>Salesforce Certified Administrator</h3>
+                        </div>
+                        <div class="certification-body">
+                            <p>Salesforce - Certification for Salesforce CRM administration, configuration, and user management.</p>
+                            <ul class="certification-details">
+                                <li><i class="fas fa-calendar-alt"></i> Issued: 2020</li>
+                                <li><i class="fas fa-id-badge"></i> Credential ID: SF-ADMIN-456</li>
+                                <li><i class="fas fa-certificate"></i> Valid: Lifetime</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Note: If you don't have certifications yet, you can show this message instead -->
+                <!--
+                <div class="no-certifications">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certifications in Progress</h3>
+                    <p>Currently pursuing relevant certifications to enhance professional qualifications. Expected completion: Q3 2026.</p>
+                    <p>Focus areas: Project Management, AI & Machine Learning, Cloud Technologies</p>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- UAE Market Section -->
+    <section class="uae-market">
+        <div class="container">
+            <div class="section-title">
+                <h2>UAE Market Focus</h2>
+            </div>
+            
+            <div class="uae-market-content">
+                <p>With direct experience in the UAE technology sector and an active employment visa, I bring valuable insights into the regional business landscape, understanding of local market dynamics, and proven ability to deliver results in the fast-paced UAE business environment.</p>
+                
+                <div class="uae-highlights">
+                    <div class="uae-highlight">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Based in Dubai</h4>
+                        <p>Local presence with employment visa</p>
+                    </div>
+                    <div class="uae-highlight">
+                        <i class="fas fa-globe-asia"></i>
+                        <h4>Regional Expertise</h4>
+                        <p>Understanding of UAE market dynamics</p>
+                    </div>
+                    <div class="uae-highlight">
+                        <i class="fas fa-business-time"></i>
+                        <h4>Tech Sector Experience</h4>
+                        <p>Proven track record in UAE tech companies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm currently exploring new opportunities in the UAE market and would be delighted to connect with organizations looking for operational excellence, customer success leadership, and technical expertise.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Dubai, UAE (Employment Visa)</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-language"></i>
+                            <div>
+                                <h4>Languages</h4>
+                                <p>English, Hindi, Kannada</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Education</h4>
+                                <p>Bachelor of Commerce - Mangalore University (2012)</p>
+                                <p>Computer Operating & Programming - Govt. Industrial Training Institute (2005)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">Your<span>Portfolio</span></a>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Professional Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
