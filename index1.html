@@ -245,6 +245,8 @@
             max-width: 100%;
             border-radius: 10px;
             box-shadow: var(--shadow);
+            height: 400px;
+            object-fit: cover;
         }
         
         /* Skills Section */
@@ -378,92 +380,110 @@
         
         .certification-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            justify-items: center;
         }
         
-        .certification-card {
+        .certification-item {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            width: 100%;
+            max-width: 500px;
         }
         
-        .certification-card:hover {
+        .certification-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         
-        .certification-header {
+        .certification-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .certification-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .certification-item:hover .certification-image img {
+            transform: scale(1.05);
+        }
+        
+        .certification-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .certification-item:hover .certification-overlay {
+            opacity: 1;
+        }
+        
+        .view-certificate {
             background-color: var(--primary-color);
             color: white;
-            padding: 20px;
-            text-align: center;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            transform: translateY(20px);
         }
         
-        .certification-header i {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            display: block;
+        .certification-item:hover .view-certificate {
+            transform: translateY(0);
         }
         
-        .certification-header h3 {
-            color: white;
-            margin-bottom: 0;
-            font-size: 1.4rem;
-        }
-        
-        .certification-body {
+        .certification-info {
             padding: 25px;
         }
         
-        .certification-body p {
-            margin-bottom: 15px;
+        .certification-info h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .certification-info p {
             color: var(--gray-color);
+            margin-bottom: 15px;
         }
         
         .certification-details {
             list-style: none;
             margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
         }
         
         .certification-details li {
             padding: 8px 0;
-            border-bottom: 1px solid #eee;
             display: flex;
             align-items: center;
-        }
-        
-        .certification-details li:last-child {
-            border-bottom: none;
         }
         
         .certification-details i {
             color: var(--accent-color);
             margin-right: 10px;
             font-size: 0.9rem;
-        }
-        
-        .no-certifications {
-            text-align: center;
-            padding: 40px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            grid-column: 1 / -1;
-        }
-        
-        .no-certifications i {
-            font-size: 3rem;
-            color: var(--gray-color);
-            margin-bottom: 20px;
-            display: block;
-        }
-        
-        .no-certifications h3 {
-            color: var(--secondary-color);
-            margin-bottom: 10px;
+            width: 20px;
         }
         
         /* UAE Market Section */
@@ -655,6 +675,10 @@
             .contact-container {
                 flex-direction: column;
             }
+            
+            .certification-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 768px) {
@@ -700,8 +724,12 @@
                 gap: 20px;
             }
             
-            .certification-grid {
-                grid-template-columns: 1fr;
+            .about-image img {
+                height: 300px;
+            }
+            
+            .certification-image {
+                height: 200px;
             }
         }
     </style>
@@ -774,8 +802,8 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <!-- Replace with your image or use placeholder -->
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Professional Headshot">
+                    <!-- Using your uploaded profile photo -->
+                    <img src="profile.jpg" alt="Professional Headshot">
                 </div>
             </div>
         </div>
@@ -890,112 +918,44 @@
             
             <div class="certifications-container">
                 <div class="certification-grid">
-                    <!-- Certification 1 -->
-                    <div class="certification-card">
-                        <div class="certification-header">
-                            <i class="fas fa-certificate"></i>
-                            <h3>Project Management Professional (PMP)</h3>
+                    <!-- Certificate 1 -->
+                    <div class="certification-item">
+                        <div class="certification-image">
+                            <img src="cert1.jpg" alt="Professional Certification 1">
+                            <div class="certification-overlay">
+                                <a href="cert1.jpg" class="view-certificate" target="_blank">View Full Certificate</a>
+                            </div>
                         </div>
-                        <div class="certification-body">
-                            <p>Project Management Institute (PMI) - Globally recognized certification for project management professionals.</p>
+                        <div class="certification-info">
+                            <h3>Professional Certification</h3>
+                            <p>This certification demonstrates expertise in key professional areas relevant to operations management and technical leadership.</p>
                             <ul class="certification-details">
-                                <li><i class="fas fa-calendar-alt"></i> Issued: 2023</li>
-                                <li><i class="fas fa-id-badge"></i> Credential ID: PMP123456</li>
-                                <li><i class="fas fa-globe"></i> Valid: Worldwide</li>
+                                <li><i class="fas fa-certificate"></i> Professional Certificate</li>
+                                <li><i class="fas fa-check-circle"></i> Valid and Active</li>
+                                <li><i class="fas fa-star"></i> Industry Recognized</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <!-- Certification 2 -->
-                    <div class="certification-card">
-                        <div class="certification-header">
-                            <i class="fas fa-robot"></i>
-                            <h3>AI & Machine Learning Specialization</h3>
+                    <!-- Certificate 2 -->
+                    <div class="certification-item">
+                        <div class="certification-image">
+                            <img src="cert2.jpg" alt="Professional Certification 2">
+                            <div class="certification-overlay">
+                                <a href="cert2.jpg" class="view-certificate" target="_blank">View Full Certificate</a>
+                            </div>
                         </div>
-                        <div class="certification-body">
-                            <p>DeepLearning.AI - Specialization covering machine learning, deep learning, and AI implementation strategies.</p>
+                        <div class="certification-info">
+                            <h3>Advanced Technical Certification</h3>
+                            <p>This certification validates advanced technical skills and knowledge in specialized areas of technology and operations.</p>
                             <ul class="certification-details">
-                                <li><i class="fas fa-calendar-alt"></i> Issued: 2023</li>
-                                <li><i class="fas fa-id-badge"></i> Credential ID: AI-ML-789</li>
-                                <li><i class="fas fa-clock"></i> Duration: 6 months</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Certification 3 -->
-                    <div class="certification-card">
-                        <div class="certification-header">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>Certified Scrum Master (CSM)</h3>
-                        </div>
-                        <div class="certification-body">
-                            <p>Scrum Alliance - Certification demonstrating expertise in Scrum methodologies and agile project management.</p>
-                            <ul class="certification-details">
-                                <li><i class="fas fa-calendar-alt"></i> Issued: 2022</li>
-                                <li><i class="fas fa-id-badge"></i> Credential ID: CSM-456789</li>
-                                <li><i class="fas fa-sync-alt"></i> Renewal: Every 2 years</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Certification 4 -->
-                    <div class="certification-card">
-                        <div class="certification-header">
-                            <i class="fas fa-cloud"></i>
-                            <h3>AWS Certified Solutions Architect</h3>
-                        </div>
-                        <div class="certification-body">
-                            <p>Amazon Web Services - Associate level certification for designing distributed systems on AWS platform.</p>
-                            <ul class="certification-details">
-                                <li><i class="fas fa-calendar-alt"></i> Issued: 2022</li>
-                                <li><i class="fas fa-id-badge"></i> Credential ID: AWS-SAA-123</li>
-                                <li><i class="fas fa-building"></i> Provider: Amazon Web Services</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Certification 5 -->
-                    <div class="certification-card">
-                        <div class="certification-header">
-                            <i class="fas fa-user-tie"></i>
-                            <h3>ITIL 4 Foundation</h3>
-                        </div>
-                        <div class="certification-body">
-                            <p>AXELOS - Foundation certification in IT Service Management framework for delivering effective IT services.</p>
-                            <ul class="certification-details">
-                                <li><i class="fas fa-calendar-alt"></i> Issued: 2021</li>
-                                <li><i class="fas fa-id-badge"></i> Credential ID: ITIL4-789012</li>
-                                <li><i class="fas fa-layer-group"></i> Level: Foundation</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Certification 6 -->
-                    <div class="certification-card">
-                        <div class="certification-header">
-                            <i class="fas fa-database"></i>
-                            <h3>Salesforce Certified Administrator</h3>
-                        </div>
-                        <div class="certification-body">
-                            <p>Salesforce - Certification for Salesforce CRM administration, configuration, and user management.</p>
-                            <ul class="certification-details">
-                                <li><i class="fas fa-calendar-alt"></i> Issued: 2020</li>
-                                <li><i class="fas fa-id-badge"></i> Credential ID: SF-ADMIN-456</li>
-                                <li><i class="fas fa-certificate"></i> Valid: Lifetime</li>
+                                <li><i class="fas fa-certificate"></i> Technical Certification</li>
+                                <li><i class="fas fa-check-circle"></i> Valid and Active</li>
+                                <li><i class="fas fa-star"></i> Industry Recognized</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Note: If you don't have certifications yet, you can show this message instead -->
-                <!--
-                <div class="no-certifications">
-                    <i class="fas fa-certificate"></i>
-                    <h3>Certifications in Progress</h3>
-                    <p>Currently pursuing relevant certifications to enhance professional qualifications. Expected completion: Q3 2026.</p>
-                    <p>Focus areas: Project Management, AI & Machine Learning, Cloud Technologies</p>
-                </div>
-                -->
             </div>
         </div>
     </section>
@@ -1157,6 +1117,15 @@
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+        
+        // Certificate image modal functionality
+        document.querySelectorAll('.view-certificate').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Open in new tab (default behavior)
+                // If you want a modal instead, you can modify this
+                console.log('Opening certificate in new tab');
             });
         });
     </script>
