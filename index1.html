@@ -796,6 +796,138 @@
             color: var(--accent-color);
         }
         
+        /* Presentation Section */
+        .presentation-section {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .presentation-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .presentation-frame {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-top: 30px;
+            height: 600px;
+            position: relative;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .presentation-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .presentation-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .presentation-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .presentation-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .presentation-btn.download {
+            background-color: var(--tech-color);
+        }
+        
+        .presentation-btn.download:hover {
+            background-color: #27ae60;
+        }
+        
+        .presentation-btn.fullscreen {
+            background-color: var(--accent-color);
+        }
+        
+        .presentation-btn.fullscreen:hover {
+            background-color: #e69500;
+        }
+        
+        .presentation-info {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .presentation-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .presentation-info h3 i {
+            color: var(--accent-color);
+        }
+        
+        .presentation-info ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .presentation-info li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 992px) {
+            .presentation-frame {
+                height: 500px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .presentation-frame {
+                height: 400px;
+            }
+            
+            .presentation-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .presentation-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .presentation-frame {
+                height: 300px;
+            }
+        }
+        
         /* Tablet styles */
         @media (min-width: 768px) {
             .container {
@@ -1084,6 +1216,7 @@
                     <li><a href="#tech-skills">Technical</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#presentation">Presentation</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -1102,7 +1235,7 @@
                     <div class="hero-buttons">
                         <a href="#contact" class="btn">Get In Touch</a>
                         <a href="#tech-skills" class="btn btn-tech">Technical Skills</a>
-                        <a href="#experience" class="btn btn-outline">View Experience</a>
+                        <a href="#presentation" class="btn btn-outline">View Presentation</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -1374,6 +1507,54 @@
         </div>
     </section>
 
+    <!-- Presentation Section -->
+    <section class="presentation-section" id="presentation">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Presentation</h2>
+            </div>
+            <div class="presentation-container">
+                <p>View my professional presentation deck that highlights my key achievements, skills, and career journey in operations, customer success, and technical leadership.</p>
+                
+                <div class="presentation-frame">
+                    <!-- Embed PDF from GitHub -->
+                    <iframe src="https://docs.google.com/gview?url=https://github.com/chethanktr/portfolio/blob/main/slide.pdf&embedded=true" 
+                            title="Chethan Kumar Professional Presentation"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <div class="presentation-actions">
+                    <a href="https://github.com/chethanktr/portfolio/raw/main/slide.pdf" 
+                       class="presentation-btn download" 
+                       download="Chethan_Kumar_Presentation.pdf">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                    <a href="https://github.com/chethanktr/portfolio/blob/main/slide.pdf" 
+                       class="presentation-btn" 
+                       target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Open in New Tab
+                    </a>
+                    <button class="presentation-btn fullscreen" id="fullscreenBtn">
+                        <i class="fas fa-expand"></i> Fullscreen View
+                    </button>
+                </div>
+                
+                <div class="presentation-info">
+                    <h3><i class="fas fa-info-circle"></i> Presentation Overview</h3>
+                    <ul>
+                        <li><strong>Professional Summary:</strong> 14+ years of operations and customer success leadership</li>
+                        <li><strong>Key Achievements:</strong> 90%+ quality ratings, 4.65/5 CSAT scores, process optimization results</li>
+                        <li><strong>Technical Expertise:</strong> AI/ML operations, Python scripting, Unix systems, deployment automation</li>
+                        <li><strong>UAE Market Experience:</strong> Dubai-based operations with employment visa status</li>
+                        <li><strong>Career Journey:</strong> Progression from technical support to operations management</li>
+                    </ul>
+                    <p><strong>Note:</strong> This presentation is best viewed in fullscreen mode for optimal reading experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="container">
@@ -1567,8 +1748,29 @@
             }
         });
         
+        // Presentation Fullscreen Functionality
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const presentationFrame = document.querySelector('.presentation-frame iframe');
+        
+        fullscreenBtn.addEventListener('click', () => {
+            if (presentationFrame.requestFullscreen) {
+                presentationFrame.requestFullscreen();
+            } else if (presentationFrame.webkitRequestFullscreen) {
+                presentationFrame.webkitRequestFullscreen();
+            } else if (presentationFrame.msRequestFullscreen) {
+                presentationFrame.msRequestFullscreen();
+            }
+        });
+        
+        // Update hero button to include presentation
+        const heroButtons = document.querySelector('.hero-buttons');
+        const experienceBtn = document.querySelector('.btn-outline');
+        if (experienceBtn && experienceBtn.textContent.includes('View Experience')) {
+            experienceBtn.textContent = 'View Presentation';
+            experienceBtn.href = '#presentation';
+        }
+        
         // Visitor Counter Implementation
-        // Using two methods for reliability
         async function updateVisitorCounter() {
             const counterElement = document.getElementById('counterNumber');
             const pageViewsElement = document.getElementById('pageViews');
