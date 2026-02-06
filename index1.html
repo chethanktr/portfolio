@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chethan Kumar - Operations & Technical Portfolio</title>
+    <title>Chethan Kumar - Operations, Customer Success & Technical Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* --- RESET & VARIABLES --- */
         * {
             margin: 0;
             padding: 0;
@@ -15,493 +14,1083 @@
         }
         
         :root {
-            /* Modern Professional Palette */
-            --primary-gradient: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
-            --accent-gradient: linear-gradient(135deg, #f12711 0%, #f5af19 100%);
             --primary-color: #1a3c8b;
             --secondary-color: #2d5aa0;
             --accent-color: #f5a623;
-            --tech-color: #00b09b; /* Teal */
-            --video-color: #e74c3c;
-            --dark-bg: #121212;
-            --light-bg: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-main: #2d3436;
-            --text-muted: #636e72;
-            --border-radius: 12px;
-            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --tech-color: #2ecc71;
+            --video-color: #e74c3c; /* New color for video button */
+            --light-color: #f8f9fa;
+            --dark-color: #333333;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
         
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Inter', sans-serif; /* Clean, modern font */
-            color: var(--text-main);
-            line-height: 1.7;
-            background-color: #fafafa;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+            background-color: #f9fbfd;
             font-size: 16px;
             overflow-x: hidden;
         }
         
         h1, h2, h3, h4 {
             font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
         
-        h1 { font-size: 3rem; color: white; margin-bottom: 1.5rem; }
-        h2 { font-size: 2.2rem; color: #2c3e50; margin-bottom: 3rem; position: relative; display: inline-block; }
+        h1 {
+            font-size: 2.2rem;
+            color: white;
+        }
         
-        /* Underline effect for H2 */
-        h2::after {
+        h2 {
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+        
+        h2:after {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 0;
+            left: 0;
             width: 60px;
             height: 4px;
-            background: var(--accent-color);
-            border-radius: 2px;
+            background-color: var(--accent-color);
         }
         
-        p { margin-bottom: 1rem; color: var(--text-muted); }
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
         
         .container {
-            width: 90%;
+            width: 95%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
-        section { padding: 80px 0; }
+        section {
+            padding: 60px 0;
+        }
         
-        .section-header { text-align: center; }
-
-        /* --- GLASSMORPHISM HEADER --- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-header h2 {
+            display: inline-block;
+        }
+        
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            height: 80px;
-            transition: var(--transition);
+            height: 70px;
         }
         
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            padding: 15px 0;
+            height: 70px;
         }
         
         .logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 800;
+            font-size: 1.6rem;
+            font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
-            letter-spacing: -0.5px;
+            z-index: 1001;
         }
         
-        .logo span { color: var(--accent-color); }
+        .logo span {
+            color: var(--accent-color);
+        }
         
-        .nav-links { display: flex; list-style: none; }
-        .nav-links li { margin-left: 30px; }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
         
         .nav-links a {
             text-decoration: none;
-            color: var(--text-main);
+            color: var(--dark-color);
             font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
             transition: var(--transition);
+            font-size: 0.95rem;
+            padding: 5px 0;
         }
         
-        /* Nav hover underlining animation */
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
+        .nav-links a:hover {
+            color: var(--primary-color);
         }
-        
-        .nav-links a:hover::after { width: 100%; }
-        .nav-links a:hover { color: var(--primary-color); }
         
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
             background: none;
             border: none;
-            color: var(--text-main);
-            cursor: pointer;
+            z-index: 1001;
         }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            background: var(--primary-gradient);
+        
+        /* Visitor Counter Styles */
+        .visitor-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
             color: white;
-            padding: 180px 0 120px; /* More padding for cleaner look */
-            position: relative;
-            overflow: hidden;
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            border: 2px solid var(--accent-color);
         }
-
-        /* Abstract background shapes */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
-            border-radius: 50%;
+        
+        .visitor-counter:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+        
+        .visitor-counter i {
+            color: var(--accent-color);
+            font-size: 1rem;
+        }
+        
+        .counter-number {
+            font-weight: 700;
+            font-size: 1.1rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 2px 8px;
+            border-radius: 15px;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .visitor-counter {
+                bottom: 15px;
+                right: 15px;
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .counter-number {
+                font-size: 1rem;
+                min-width: 45px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .visitor-counter {
+                bottom: 10px;
+                right: 10px;
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
+            
+            .counter-number {
+                font-size: 0.9rem;
+                min-width: 40px;
+            }
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 120px 0 80px;
+            margin-top: 70px;
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
         }
         
         .hero-content {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            gap: 60px;
+            justify-content: center;
+            gap: 40px;
+            text-align: center;
         }
         
-        .hero-text { flex: 1; text-align: left; }
-        .hero-text p { color: rgba(255,255,255,0.9); font-size: 1.15rem; }
+        .hero-text {
+            width: 100%;
+            max-width: 800px;
+        }
         
-        .hero-image { flex: 0 0 350px; position: relative; }
+        .hero-image {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
         
         .profile-img {
-            width: 320px;
-            height: 320px;
-            border-radius: 30px; /* Softer square */
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
             object-fit: cover;
-            border: 8px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            transform: rotate(-3deg);
-            transition: var(--transition);
-        }
-
-        .profile-img:hover { transform: rotate(0) scale(1.02); }
-
-        /* Floating Badges */
-        .tech-badge {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--primary-color);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            animation: float 4s ease-in-out infinite;
-            z-index: 2;
-        }
-
-        .badge-1 { top: 20%; left: -20px; animation-delay: 0s; }
-        .badge-2 { top: 80%; right: -20px; animation-delay: 1.5s; }
-        .badge-3 { bottom: 10%; left: 0px; animation-delay: 2.5s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* --- BUTTONS --- */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            font-size: 1rem;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .btn-primary { background: var(--accent-color); color: white; }
-        .btn-primary:hover { background: #d38b10; transform: translateY(-3px); }
-
-        .btn-tech { background: #00b09b; color: white; }
-        .btn-tech:hover { background: #008a7a; transform: translateY(-3px); }
-
-        .btn-video {
-            background: var(--video-color);
-            color: white;
-            animation: pulse-red 2s infinite;
-        }
-        .btn-video:hover {
-            background: #c0392b;
-            transform: translateY(-3px);
-            animation: none;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid rgba(255,255,255,0.4);
-            color: white;
-        }
-        .btn-outline:hover {
-            background: white;
-            color: var(--primary-color);
-            border-color: white;
-        }
-
-        @keyframes pulse-red {
-            0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
-        }
-
-        .hero-buttons { margin-top: 35px; display: flex; flex-wrap: wrap; gap: 15px; }
-
-        /* --- CARDS & GRID --- */
-        .skill-category, .tech-skill-item, .contact-item {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.03);
-            height: 100%;
-        }
-
-        .skill-category:hover, .tech-skill-item:hover, .contact-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-hover);
-        }
-
-        /* --- SKILLS --- */
-        .skills-container, .tech-skills-grid, .contact-info {
-            display: grid;
-            gap: 25px;
-        }
-        
-        .tech-icon { font-size: 2.5rem; margin-bottom: 20px; background: -webkit-linear-gradient(#00b09b, #96c93d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        .skill-list li {
-            padding: 10px 0;
-            border-bottom: 1px dashed #eee;
-            color: var(--text-main);
-        }
-        .skill-list li i { color: var(--tech-color); margin-right: 10px; }
-
-        /* --- PRESENTATION SECTION (CINEMA MODE) --- */
-        .presentation-section {
-            background-color: #050505; /* Deep black */
-            color: white;
-            position: relative;
-        }
-        
-        .presentation-section h2 { color: white; }
-        
-        .video-wrapper {
-            max-width: 960px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             margin: 0 auto;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-            border: 1px solid #333;
-            background: #000;
+            display: block;
         }
         
-        .video-wrapper video { width: 100%; display: block; }
-        
-        .video-description {
-            color: #aaa;
-            text-align: center;
-            margin-top: 30px;
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero h2 {
+            color: white !important;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
-
-        /* --- TIMELINE --- */
-        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
-        .timeline::before {
-            content: '';
-            position: absolute;
+        
+        .hero h2:after {
             left: 50%;
             transform: translateX(-50%);
-            width: 4px;
-            background: #e9ecef;
-            top: 0; bottom: 0;
+            background-color: var(--accent-color);
+        }
+        
+        .tech-badge {
+            position: absolute;
+            background: var(--tech-color);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            animation: float 6s ease-in-out infinite;
+            white-space: nowrap;
+        }
+        
+        .badge-1 {
+            top: 15%;
+            left: 5%;
+            animation-delay: 0s;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+        
+        .badge-2 {
+            top: 40%;
+            right: 10%;
+            animation-delay: 2s;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        
+        .badge-3 {
+            bottom: 25%;
+            left: 15%;
+            animation-delay: 4s;
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .hero .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
             border-radius: 4px;
         }
         
-        .timeline-item { display: flex; justify-content: space-between; margin-bottom: 50px; }
-        .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+        .tech-highlight {
+            color: var(--tech-color);
+            font-weight: 600;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
         
-        .timeline-content {
-            width: 45%;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 5px;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #e69500;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-tech {
+            background-color: var(--tech-color);
+        }
+        
+        .btn-tech:hover {
+            background-color: #27ae60;
+        }
+        
+        /* New Button Style for Presentation */
+        .btn-video {
+            background-color: var(--video-color);
+        }
+        
+        .btn-video:hover {
+            background-color: #c0392b;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background-color: white;
+            border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            position: relative;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray-color);
+        }
+        
+        .additional-info h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .skills-section {
+            background-color: var(--light-color);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        
+        .skill-category {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--box-shadow);
             transition: var(--transition);
         }
         
-        .timeline-content:hover { transform: scale(1.02); }
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
         
-        .timeline-date {
-            width: 45%;
-            text-align: right;
+        .skill-category h3 {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            font-weight: 700;
-            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .skill-category i {
+            margin-right: 10px;
+            color: var(--accent-color);
             font-size: 1.1rem;
         }
         
-        .timeline-item:nth-child(even) .timeline-date { justify-content: flex-start; text-align: left; }
-        
-        /* Dot on timeline */
-        .timeline-content::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -42px; /* Adjust based on gap */
-            width: 20px;
-            height: 20px;
-            background: var(--accent-color);
-            border: 4px solid white;
-            border-radius: 50%;
-            transform: translateY(-50%);
-            box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.2);
-            z-index: 10;
+        .skill-list {
+            list-style: none;
         }
         
-        .timeline-item:nth-child(even) .timeline-content::after {
-            right: auto;
-            left: -42px;
+        .skill-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        
+        .skill-list li i {
+            margin-right: 10px;
+            font-size: 0.9rem;
+            color: var(--tech-color);
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .tech-skills-section {
+            background-color: #f0f7ff;
+        }
+        
+        .tech-skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .tech-skill-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .tech-skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tech-icon {
+            font-size: 2.2rem;
+            color: var(--tech-color);
+            margin-bottom: 15px;
+        }
+        
+        .skill-level {
+            height: 6px;
+            background-color: var(--light-gray);
+            border-radius: 3px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+        
+        .skill-level-bar {
+            height: 100%;
+            background-color: var(--tech-color);
+            border-radius: 3px;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .skill-level-90 { width: 90%; }
+        .skill-level-85 { width: 85%; }
+        .skill-level-80 { width: 80%; }
+        .skill-level-75 { width: 75%; }
+
+        /* Presentation Section Styles (NEW) */
+        .presentation-section {
+            background-color: white;
         }
 
-        /* --- CERTIFICATIONS --- */
-        .certificates-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .video-wrapper {
             max-width: 900px;
             margin: 0 auto;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--light-gray);
+            background-color: black;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+        
+        .certifications-section {
+            background-color: var(--light-color);
+        }
+        
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .certificate-image-container {
+            background-color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .certificate-image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
         
         .certificate-img {
             width: 100%;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
+            max-width: 400px;
+            height: auto;
+            border-radius: 5px;
+            border: 1px solid var(--light-gray);
             cursor: pointer;
+            transition: var(--transition);
         }
         
-        .certificate-image-container:hover .certificate-img { transform: scale(1.03); }
-
-        /* --- CONTACT & FOOTER --- */
-        .contact-section { background: var(--primary-color); color: white; }
-        .contact-section h2 { color: white; }
-        
-        .contact-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.2);
+        .certificate-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        .contact-item h3 { color: white; }
-        .contact-item p, .contact-item a { color: rgba(255,255,255,0.8); }
-
-        footer { background: #0F2027; color: #7f8c8d; padding: 50px 0; border-top: 1px solid #1f2f36; }
-        .social-links a { 
-            background: rgba(255,255,255,0.05); 
-            color: white; 
-            width: 50px; height: 50px; 
+        
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--light-gray);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .timeline-content {
+            width: calc(100% - 60px);
+            margin-left: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .timeline-date {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 70px;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 1;
+        }
+        
+        .timeline-content h4 {
+            color: var(--secondary-color);
+            margin-bottom: 8px;
             font-size: 1.2rem;
         }
-
-        /* --- SCROLL ANIMATION CLASS --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
+        
+        .company {
+            color: var(--gray-color);
+            font-style: italic;
+            margin-bottom: 12px;
+            display: block;
+            font-size: 0.95rem;
         }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        
+        .timeline-content ul {
+            padding-left: 20px;
         }
-
-        /* --- VISITOR COUNTER --- */
-        .visitor-counter {
-            background: white;
-            color: var(--text-main);
-            border: none;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            font-family: 'Poppins', sans-serif;
+        
+        .timeline-content li {
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
-        .counter-number { background: var(--primary-color); color: white; }
-
-        /* --- MEDIA QUERIES --- */
-        @media (min-width: 992px) {
-            .skills-container, .contact-info { grid-template-columns: repeat(4, 1fr); }
-            .tech-skills-grid { grid-template-columns: repeat(3, 1fr); }
-            .menu-toggle { display: none; }
+        
+        .contact-section {
+            background-color: var(--primary-color);
+            color: white;
         }
-
-        @media (max-width: 991px) {
-            .hero-content { flex-direction: column; text-align: center; }
-            .hero-text { text-align: center; }
-            .hero-image { margin-top: 30px; }
-            .hero-buttons { justify-content: center; }
-            
-            .timeline::before { left: 20px; }
-            .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; }
-            .timeline-content { width: calc(100% - 50px); margin-left: 50px; margin-bottom: 10px; }
-            .timeline-content::after { left: -42px; right: auto; }
-            .timeline-date { width: 100%; text-align: left; padding-left: 50px; margin-bottom: 10px; }
+        
+        .contact-section h2 {
+            color: white;
         }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed; top: 80px; left: 0; width: 100%;
-                background: white; flex-direction: column; padding: 20px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                transform: translateY(-150%);
-                opacity: 0;
+        
+        .contact-section h2:after {
+            background-color: var(--accent-color);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            color: var(--accent-color);
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .contact-item h3 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-item p, .contact-item a {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .contact-item a {
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(255,255,255,0.5);
+            transition: var(--transition);
+        }
+        
+        .contact-item a:hover {
+            color: white;
+            border-bottom-color: white;
+        }
+        
+        footer {
+            background-color: #1a1a2e;
+            color: #aaa;
+            padding: 30px 0 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.3rem;
+            transition: var(--transition);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Modal for certificate images */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 95%;
+            max-height: 90%;
+            margin-top: 40px;
+            border-radius: 5px;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 2001;
+        }
+        
+        .close-modal:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Tablet styles */
+        @media (min-width: 768px) {
+            .container {
+                width: 90%;
             }
-            .nav-links.active { transform: translateY(0); opacity: 1; }
-            .nav-links li { margin: 15px 0; }
-            .menu-toggle { display: block; }
             
-            .skills-container, .tech-skills-grid, .contact-info, .certificates-grid { grid-template-columns: 1fr; }
+            h1 {
+                font-size: 2.5rem;
+            }
             
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.8rem; }
+            h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+            
+            .hero {
+                padding: 140px 0 100px;
+            }
+            
+            .hero-content {
+                flex-direction: row;
+                text-align: left;
+                gap: 50px;
+            }
+            
+            .hero-text {
+                text-align: left;
+                flex: 1;
+            }
+            
+            .hero-image {
+                flex: 0 0 auto;
+            }
+            
+            .hero h2:after {
+                left: 0;
+                transform: none;
+            }
+            
+            .hero-buttons {
+                justify-content: flex-start;
+            }
+            
+            .about-content {
+                flex-direction: row;
+                gap: 50px;
+            }
+            
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tech-skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .timeline:before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .timeline-item {
+                flex-direction: row;
+            }
+            
+            .timeline-item:nth-child(odd) {
+                flex-direction: row-reverse;
+            }
+            
+            .timeline-content {
+                width: 45%;
+                margin-left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-right: 0;
+            }
+            
+            .timeline-date {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+            }
+        }
+        
+        /* Desktop styles */
+        @media (min-width: 992px) {
+            .skills-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .tech-skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .contact-info {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .nav-links {
+                display: flex !important;
+            }
+            
+            .menu-toggle {
+                display: none !important;
+            }
+        }
+        
+        /* Mobile menu styles */
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 12px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .tech-badge {
+                position: relative;
+                display: inline-block;
+                margin: 5px;
+                animation: none;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+            }
+            
+            .hero-image .tech-badge-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 20px;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+            
+            .stat-item {
+                padding: 12px 8px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Small mobile styles */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+            
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .stat-item {
+                padding: 15px;
+            }
+            
+            .skill-category {
+                padding: 20px;
+            }
+            
+            .tech-skill-item {
+                padding: 15px;
+            }
+            
+            .contact-item {
+                padding: 15px;
+            }
+            
+            .timeline-content {
+                padding: 15px;
+            }
+        }
+        
+        /* Prevent horizontal scrolling */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
         }
     </style>
 </head>
 <body>
-
     <div class="visitor-counter" id="visitorCounter">
-        <i class="fas fa-chart-line"></i>
-        <span>Views:</span>
-        <span class="counter-number" id="counterNumber">...</span>
+        <i class="fas fa-eye"></i>
+        <span>Visitors:</span>
+        <span class="counter-number" id="counterNumber">Loading...</span>
     </div>
 
     <div id="certificateModal" class="modal">
@@ -513,13 +1102,15 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">Chethan<span>.</span></a>
-                <button class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></button>
+                <button class="menu-toggle" id="mobile-menu" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#tech-skills">Technical</a></li>
-                    <li><a href="#presentation" style="color: var(--video-color); font-weight: 700;">Video</a></li>
+                    <li><a href="#presentation">Presentation</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -531,25 +1122,25 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text reveal">
-                    <h4>Hello, I'm</h4>
+                <div class="hero-text">
                     <h1>Chethan Kumar</h1>
-                    <h2>Operations & Tech Lead</h2>
-                    <p>Strategic Operations Manager with <strong>14+ years of experience</strong> bridging the gap between business operations and technical innovation.</p>
-                    <p>Specializing in <strong>AI/ML Data Ops, Python Automation, and Customer Success</strong> strategies that scale.</p>
-                    
+                    <h2>Operations, Customer Success & Technical Leader</h2>
+                    <p>Strategic Operations Manager with <span class="highlight">14+ years of experience</span> driving operational excellence, customer satisfaction, and scalable service delivery across technology-driven environments.</p>
+                    <p>Specializing in <span class="tech-highlight">AI/ML data operations, Python scripting, Unix systems, and deployment automation</span> alongside operations management and customer success leadership.</p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                        <a href="#tech-skills" class="btn btn-tech">Tech Stack</a>
-                        <a href="#presentation" class="btn btn-video"><i class="fas fa-play"></i> Watch Presentation</a>
-                        <a href="#experience" class="btn btn-outline">My Journey</a>
+                        <a href="#contact" class="btn">Get In Touch</a>
+                        <a href="#tech-skills" class="btn btn-tech">Technical Skills</a>
+                        <a href="#presentation" class="btn btn-video"><i class="fas fa-play-circle"></i> Watch Presentation</a>
+                        <a href="#experience" class="btn btn-outline">View Experience</a>
                     </div>
                 </div>
-                <div class="hero-image reveal">
-                    <img src="profile.jpg" alt="Chethan Kumar" class="profile-img">
-                    <div class="tech-badge badge-1"><i class="fas fa-robot"></i> AI Prompting</div>
-                    <div class="tech-badge badge-2"><i class="fab fa-python"></i> Python</div>
-                    <div class="tech-badge badge-3"><i class="fas fa-rocket"></i> Deployment</div>
+                <div class="hero-image">
+                    <img src="profile.jpg" alt="Chethan Kumar - Professional Headshot" class="profile-img">
+                    <div class="tech-badge-container">
+                        <div class="tech-badge badge-1">AI Prompting</div>
+                        <div class="tech-badge badge-2">Python Scripting</div>
+                        <div class="tech-badge badge-3">Deployment</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -557,111 +1148,166 @@
 
     <section id="about">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header">
                 <h2>About Me</h2>
-                <p style="max-width: 700px; margin: 0 auto;">Based in Dubai, UAE. I combine operational leadership with technical execution to build efficient, scalable systems.</p>
             </div>
-            <br>
-            <div class="about-stats reveal">
-                <div class="stats">
-                    <div class="stat-item">
-                        <span class="stat-number">14+</span>
-                        <span class="stat-label">Years Experience</span>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a strategic operations and customer success leader with extensive experience in driving operational excellence, customer satisfaction, and scalable service delivery across technology-driven environments.</p>
+                    <p>Currently based in Dubai, UAE with an employment visa, I specialize in operations management, customer success, data governance, service delivery, and team leadership, with recent focus on <strong>data operations supporting machine learning pipelines</strong> and <strong>technical automation</strong>.</p>
+                    <p>My technical expertise extends to <strong>AI prompting, Python script execution, Unix command line operations, and deployment automation</strong>, which I leverage to optimize workflows and enhance operational efficiency.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">14+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">90%+</span>
+                            <span class="stat-label">Quality Rating</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.65/5</span>
+                            <span class="stat-label">CSAT Score</span>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">90%+</span>
-                        <span class="stat-label">Quality Score</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">4.6/5</span>
-                        <span class="stat-label">CSAT Rating</span>
+                    <div class="additional-info">
+                        <h3>Languages</h3>
+                        <p>English, Hindi, Kannada</p>
+                        <h3>Education</h3>
+                        <p><strong>Bachelor of Commerce</strong> - Mangalore University, India (2012)</p>
+                        <p><strong>Computer Operating & Programming</strong> - Govt. Industrial Training Institute, India (2005)</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" style="background: var(--light-bg);">
+    <section class="skills-section" id="skills">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header">
                 <h2>Core Competencies</h2>
             </div>
-            <div class="skills-container reveal">
+            <div class="skills-container">
                 <div class="skill-category">
-                    <h3><i class="fas fa-cogs"></i> Operations</h3>
+                    <h3><i class="fas fa-cogs"></i> Operations Management</h3>
                     <ul class="skill-list">
-                        <li><i class="fas fa-check"></i> Process Optimisation</li>
-                        <li><i class="fas fa-check"></i> Service Management</li>
-                        <li><i class="fas fa-check"></i> SLA Management</li>
-                        <li><i class="fas fa-check"></i> Agile Systems</li>
+                        <li><i class="fas fa-check-circle"></i> Process Optimisation</li>
+                        <li><i class="fas fa-check-circle"></i> Service Management</li>
+                        <li><i class="fas fa-check-circle"></i> SLA Management</li>
+                        <li><i class="fas fa-check-circle"></i> Agile Operations & Systems</li>
+                        <li><i class="fas fa-check-circle"></i> Performance Management</li>
+                        <li><i class="fas fa-check-circle"></i> Quality Assurance</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-users"></i> Success</h3>
+                    <h3><i class="fas fa-users"></i> Customer Success</h3>
                     <ul class="skill-list">
-                        <li><i class="fas fa-check"></i> Customer Journey</li>
-                        <li><i class="fas fa-check"></i> Team Leadership</li>
-                        <li><i class="fas fa-check"></i> Loyalty Programs</li>
-                        <li><i class="fas fa-check"></i> Analytics</li>
+                        <li><i class="fas fa-check-circle"></i> Customer Journey Optimisation</li>
+                        <li><i class="fas fa-check-circle"></i> Contact Centre Management</li>
+                        <li><i class="fas fa-check-circle"></i> Loyalty Programs</li>
+                        <li><i class="fas fa-check-circle"></i> Cross-Functional Collaboration</li>
+                        <li><i class="fas fa-check-circle"></i> Client Onboarding</li>
+                        <li><i class="fas fa-check-circle"></i> Customer Analytics</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Data</h3>
+                    <h3><i class="fas fa-database"></i> Data & Technical</h3>
                     <ul class="skill-list">
-                        <li><i class="fas fa-check"></i> Data Governance</li>
-                        <li><i class="fas fa-check"></i> Salesforce CRM</li>
-                        <li><i class="fas fa-check"></i> Advanced Excel</li>
-                        <li><i class="fas fa-check"></i> Reporting</li>
+                        <li><i class="fas fa-check-circle"></i> Data Management & Governance</li>
+                        <li><i class="fas fa-check-circle"></i> Salesforce CRM</li>
+                        <li><i class="fas fa-check-circle"></i> HRIS Systems</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced Excel & Reporting</li>
+                        <li><i class="fas fa-check-circle"></i> Reporting Dashboards</li>
+                        <li><i class="fas fa-check-circle"></i> Technical Support Operations</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-chess-knight"></i> Strategy</h3>
+                    <h3><i class="fas fa-chart-line"></i> Leadership & Strategy</h3>
                     <ul class="skill-list">
-                        <li><i class="fas fa-check"></i> Talent Development</li>
-                        <li><i class="fas fa-check"></i> Strategic Hiring</li>
-                        <li><i class="fas fa-check"></i> Commercial Acumen</li>
-                        <li><i class="fas fa-check"></i> Stakeholder Mgmt</li>
+                        <li><i class="fas fa-check-circle"></i> Team Leadership & Development</li>
+                        <li><i class="fas fa-check-circle"></i> Talent Development</li>
+                        <li><i class="fas fa-check-circle"></i> Recruitment & Onboarding</li>
+                        <li><i class="fas fa-check-circle"></i> Strategic Hiring</li>
+                        <li><i class="fas fa-check-circle"></i> Commercial/Sales Acumen</li>
+                        <li><i class="fas fa-check-circle"></i> Communication Skills</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="tech-skills">
+    <section class="tech-skills-section" id="tech-skills">
         <div class="container">
-            <div class="section-header reveal">
-                <h2>Technical & AI Stack</h2>
+            <div class="section-header">
+                <h2>Technical & AI Skills</h2>
             </div>
-            <div class="tech-skills-grid reveal">
+            <div class="tech-skills-grid">
                 <div class="tech-skill-item">
-                    <div class="tech-icon"><i class="fas fa-robot"></i></div>
-                    <h3>AI Prompting</h3>
-                    <p>Expert in crafting effective prompts for LLMs and integrating AI into workflows.</p>
+                    <div class="tech-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Prompting Expert</h3>
+                    <p>Expert in crafting effective prompts for AI models, optimizing outputs for business applications, and integrating AI tools into operational workflows.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar skill-level-90"></div>
+                    </div>
                 </div>
+                
                 <div class="tech-skill-item">
-                    <div class="tech-icon"><i class="fab fa-python"></i></div>
-                    <h3>Python Scripting</h3>
-                    <p>Automation scripts, data processing, and ML pipeline integration.</p>
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python Script Execution</h3>
+                    <p>Proficient in Python scripting for data processing, automation, workflow optimization, and integration with ML pipelines and operational systems.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar skill-level-85"></div>
+                    </div>
                 </div>
+                
                 <div class="tech-skill-item">
-                    <div class="tech-icon"><i class="fas fa-terminal"></i></div>
-                    <h3>Unix/Linux</h3>
-                    <p>Command line operations, system administration, and file management.</p>
+                    <div class="tech-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3>Unix Command Execution</h3>
+                    <p>Skilled in Unix/Linux command line operations for system administration, file management, process monitoring, and automation scripting.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar skill-level-80"></div>
+                    </div>
                 </div>
+                
                 <div class="tech-skill-item">
-                    <div class="tech-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                    <h3>Deployment</h3>
-                    <p>CI/CD concepts, environment management, and release automation.</p>
+                    <div class="tech-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Deployment Automation</h3>
+                    <p>Experienced in deployment processes, CI/CD pipeline concepts, environment management, and release automation for operational systems.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar skill-level-75"></div>
+                    </div>
                 </div>
+                
                 <div class="tech-skill-item">
-                    <div class="tech-icon"><i class="fas fa-layer-group"></i></div>
-                    <h3>ML Data Ops</h3>
-                    <p>Data quality, preprocessing, and governance for machine learning models.</p>
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Operations for ML</h3>
+                    <p>Specialized in data operations supporting machine learning pipelines including data quality, preprocessing, and governance for AI/ML models.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar skill-level-85"></div>
+                    </div>
                 </div>
+                
                 <div class="tech-skill-item">
-                    <div class="tech-icon"><i class="fas fa-tools"></i></div>
-                    <h3>Tools</h3>
-                    <p>Salesforce, HRIS, Web Hosting, Technical Support systems.</p>
+                    <div class="tech-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Technical Tools & Systems</h3>
+                    <p>Salesforce CRM, HRIS Systems, Advanced Excel, Reporting Dashboards, Web Hosting environments, and technical support operations.</p>
+                    <div class="skill-level">
+                        <div class="skill-level-bar skill-level-90"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -669,75 +1315,99 @@
 
     <section class="presentation-section" id="presentation">
         <div class="container">
-            <div class="section-header reveal">
-                <h2><i class="fas fa-film"></i> Video Presentation</h2>
-                <p style="color: #aaa;">A deep dive into my operational philosophy and technical background.</p>
+            <div class="section-header">
+                <h2>Video Presentation</h2>
             </div>
-            <div class="video-wrapper reveal">
+            <div class="video-wrapper">
                 <video controls controlsList="nodownload" poster="">
                     <source src="https://github.com/chethanktr/portfolio/raw/main/Chethan_Kumar%20(1).mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <p class="video-description reveal">
-                In this video, I walk through my journey from technical support to operational leadership, highlighting key projects where I automated workflows and improved CSAT scores.
-            </p>
-        </div>
-    </section>
-
-    <section id="experience" style="background: var(--light-bg);">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Professional Journey</h2>
-            </div>
-            <div class="timeline reveal">
-                <div class="timeline-item">
-                    <div class="timeline-date">Feb 2024 - Present</div>
-                    <div class="timeline-content">
-                        <h4>Operations Manager</h4>
-                        <span class="company" style="color: var(--primary-color);">DTEK.ai, Dubai</span>
-                        <p>Architected enterprise data strategies and improved data quality for ML pipelines. Implemented Unix-based automation.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Jul 2022 - Feb 2024</div>
-                    <div class="timeline-content">
-                        <h4>Customer Success Lead</h4>
-                        <span class="company" style="color: var(--primary-color);">DTEK.ai, Dubai</span>
-                        <p>Steered CS team to surpass targets. Utilized Python for data analysis and integrated AI tools for sentiment analysis.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Jan 2014 - Dec 2021</div>
-                    <div class="timeline-content">
-                        <h4>Tech Support Lead</h4>
-                        <span class="company" style="color: var(--primary-color);">GlowTouch, India</span>
-                        <p>Directed support delivery with 90%+ quality. Developed automation scripts for common support scenarios.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2009 - 2014</div>
-                    <div class="timeline-content">
-                        <h4>Support Representative</h4>
-                        <span class="company" style="color: var(--primary-color);">GlowTouch, India</span>
-                        <p>Resolved complex hosting issues. Executed Unix commands for server monitoring.</p>
-                    </div>
-                </div>
+            <div style="text-align: center; margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p>A brief overview of my professional background, technical expertise, and operational philosophy.</p>
             </div>
         </div>
     </section>
 
-    <section id="certifications">
+    <section class="certifications-section" id="certifications">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header">
                 <h2>Certifications</h2>
             </div>
-            <div class="certificates-grid reveal">
+            
+            <div class="certificates-grid">
                 <div class="certificate-image-container">
-                    <img src="cert1.jpg" alt="Certificate 1" class="certificate-img">
+                    <img src="cert1.jpg" alt="Certificate 1" class="certificate-img" data-img="cert1.jpg">
                 </div>
+                
                 <div class="certificate-image-container">
-                    <img src="cert2.jpg" alt="Certificate 2" class="certificate-img">
+                    <img src="cert2.jpg" alt="Certificate 2" class="certificate-img" data-img="cert2.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Work Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Operations Manager</h4>
+                        <span class="company">DTEK.ai, Dubai, UAE</span>
+                        <ul>
+                            <li>Architected and executed enterprise data strategies to improve data quality, accessibility, and security for ML pipelines</li>
+                            <li>Diagnosed inefficiencies across data pipelines and instituted best-practice workflows with automation scripting</li>
+                            <li>Leveraged AI prompting techniques to optimize data processing and model validation workflows</li>
+                            <li>Implemented Unix-based automation for data processing and deployment operations</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date">Feb 2024 - Present</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Customer Success Team Lead</h4>
+                        <span class="company">DTEK.ai, Dubai, UAE</span>
+                        <ul>
+                            <li>Steered a team of customer success specialists to consistently surpass satisfaction targets</li>
+                            <li>Utilized Python scripts for customer data analysis and feedback processing</li>
+                            <li>Integrated technical solutions with customer success workflows</li>
+                            <li>Applied AI tools for customer sentiment analysis and predictive support</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date">Jul 2022 - Feb 2024</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Team Lead - Technical Support</h4>
+                        <span class="company">GlowTouch Technologies, Mangalore, India</span>
+                        <ul>
+                            <li>Directed end-to-end technical support delivery, sustaining quality scores above 90%</li>
+                            <li>Implemented Unix-based monitoring and troubleshooting procedures</li>
+                            <li>Developed automation scripts for common support scenarios</li>
+                            <li>Managed deployment processes for client hosting environments</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date">Jan 2014 - Dec 2021</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Technical Support Representative</h4>
+                        <span class="company">GlowTouch Technologies, Mangalore, India</span>
+                        <ul>
+                            <li>Resolved complex technical issues related to web hosting environments and server configurations</li>
+                            <li>Executed Unix commands for server monitoring and troubleshooting</li>
+                            <li>Assisted with deployment processes and environment setups</li>
+                            <li>Monitored hosting platforms in real time to anticipate outages</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date">2009 - 2014</div>
                 </div>
             </div>
         </div>
@@ -745,30 +1415,45 @@
 
     <section class="contact-section" id="contact">
         <div class="container">
-            <div class="section-header reveal">
-                <h2>Let's Connect</h2>
-                <p style="color: rgba(255,255,255,0.8);">Open for opportunities in Dubai (Employment Visa)</p>
+            <div class="section-header">
+                <h2>Contact Me</h2>
             </div>
-            <div class="contact-info reveal">
+            <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-                    <h3>Phone</h3>
-                    <p><a href="tel:+971589169518">+971 58 916 9518</a></p>
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+971589169518">+971 58 916 9518</a></p>
+                    </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <h3>Email</h3>
-                    <p><a href="mailto:chethan.ktr@gmail.com">chethan.ktr@gmail.com</a></p>
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:chethan.ktr@gmail.com">chethan.ktr@gmail.com</a></p>
+                    </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <h3>Location</h3>
-                    <p>Dubai, UAE</p>
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Dubai, UAE (Employment Visa)</p>
+                    </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-                    <h3>LinkedIn</h3>
-                    <p><a href="https://www.linkedin.com/in/chethanktry/" target="_blank">View Profile</a></p>
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <p><a href="https://www.linkedin.com/in/chethanktry/" target="_blank">linkedin.com/in/Chethanktry/</a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -777,92 +1462,287 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/chethanktry/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:chethan.ktr@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/chethanktry/" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:chethan.ktr@gmail.com" title="Send Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="copyright">&copy; 2024 Chethan Kumar. All Rights Reserved.</p>
-            <p class="copyright" style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">
-                <span id="pageViews">Loading...</span>
+            <p class="copyright">&copy; 2023 Chethan Kumar. All Rights Reserved. | Operations, Customer Success & Technical Leadership</p>
+            <p class="copyright" style="font-size: 0.75rem; margin-top: 10px; opacity: 0.7;">
+                <span id="pageViews">Loading visitor count...</span>
             </p>
         </div>
     </footer>
 
     <script>
-        // --- 1. Mobile Menu ---
+        // Mobile Menu Toggle
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
         
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            // Toggle menu icon
             const icon = mobileMenu.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                // Prevent body scrolling when menu is open
+                document.body.style.overflow = 'hidden';
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                // Restore body scrolling
+                document.body.style.overflow = 'auto';
+            }
         });
-
-        // Close menu when clicking links
+        
+        // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-                mobileMenu.querySelector('i').classList.add('fa-bars');
                 mobileMenu.querySelector('i').classList.remove('fa-times');
+                mobileMenu.querySelector('i').classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
             });
         });
-
-        // --- 2. Scroll Reveal Animation ---
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                mobileMenu.querySelector('i').classList.remove('fa-times');
+                mobileMenu.querySelector('i').classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
             }
-        }
-        window.addEventListener("scroll", reveal);
-        // Trigger once on load
-        reveal();
-
-        // --- 3. Modal Image Logic ---
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                // Don't prevent default for empty hash
+                if (this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Calculate position with header offset
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animate skill bars on scroll
+        const skillBars = document.querySelectorAll('.skill-level-bar');
+        
+        const animateSkillBars = () => {
+            skillBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                
+                // Check if element is in viewport
+                if (rect.top <= windowHeight - 100 && rect.bottom >= 0) {
+                    const widthClass = Array.from(bar.classList).find(cls => cls.startsWith('skill-level-'));
+                    if (widthClass) {
+                        const width = widthClass.split('-')[2];
+                        bar.style.width = `${width}%`;
+                    }
+                }
+            });
+        };
+        
+        // Set initial width to 0 for animation
+        skillBars.forEach(bar => {
+            bar.style.width = '0%';
+        });
+        
+        // Animate on load and scroll
+        window.addEventListener('load', animateSkillBars);
+        window.addEventListener('scroll', animateSkillBars);
+        
+        // Certificate modal functionality
         const modal = document.getElementById('certificateModal');
         const modalImg = document.getElementById('modalImage');
         const closeModal = document.getElementById('closeModal');
+        const certificateImages = document.querySelectorAll('.certificate-img');
         
-        document.querySelectorAll('.certificate-img').forEach(img => {
+        // Open modal when clicking on certificate images
+        certificateImages.forEach(img => {
             img.addEventListener('click', () => {
                 modal.style.display = 'block';
                 modalImg.src = img.src;
-                document.body.style.overflow = 'hidden';
+                modalImg.alt = img.alt;
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
             });
         });
-
-        closeModal.onclick = function() {
+        
+        // Close modal
+        closeModal.addEventListener('click', () => {
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        });
+        
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+        });
+        
+        // Visitor Counter Implementation
+        // Using two methods for reliability
+        async function updateVisitorCounter() {
+            const counterElement = document.getElementById('counterNumber');
+            const pageViewsElement = document.getElementById('pageViews');
+            
+            // Method 1: Use localStorage to track unique visits (client-side)
+            function getLocalVisitorCount() {
+                let count = localStorage.getItem('portfolioVisitorCount');
+                if (!count) {
+                    count = 100; // Starting number
+                    localStorage.setItem('portfolioVisitorCount', count);
+                }
+                return parseInt(count);
+            }
+            
+            // Method 2: Try to use a free counter API as backup
+            async function getAPIVisitorCount() {
+                try {
+                    // Using CountAPI - a free counting service
+                    const response = await fetch('https://api.countapi.xyz/hit/chethankumar-portfolio/visits');
+                    const data = await response.json();
+                    return data.value;
+                } catch (error) {
+                    console.log('API counter failed, using local storage');
+                    return null;
+                }
+            }
+            
+            // Method 3: Try a different free API
+            async function getAlternativeVisitorCount() {
+                try {
+                    // Using another free counter service
+                    const response = await fetch('https://api.visitorbadge.io/api/visitors?path=https://chethankumar-portfolio&label=Visitors&countColor=%232ecc71');
+                    const text = await response.text();
+                    // Extract number from response if possible
+                    const match = text.match(/>(\d+)</);
+                    return match ? parseInt(match[1]) : null;
+                } catch (error) {
+                    return null;
+                }
+            }
+            
+            // Get counts from all methods
+            const localCount = getLocalVisitorCount();
+            const apiCount = await getAPIVisitorCount();
+            const altCount = await getAlternativeVisitorCount();
+            
+            // Determine which count to display
+            let displayCount = localCount;
+            
+            if (apiCount && apiCount > displayCount) {
+                displayCount = apiCount;
+            }
+            
+            if (altCount && altCount > displayCount) {
+                displayCount = altCount;
+            }
+            
+            // Update localStorage with the highest count
+            if (displayCount > localCount) {
+                localStorage.setItem('portfolioVisitorCount', displayCount);
+            }
+            
+            // Increment for this visit
+            displayCount++;
+            localStorage.setItem('portfolioVisitorCount', displayCount);
+            
+            // Update display with animation
+            counterElement.textContent = displayCount;
+            pageViewsElement.textContent = `Total Portfolio Views: ${displayCount}`;
+            
+            // Add animation effect
+            counterElement.style.transform = 'scale(1.2)';
+            counterElement.style.color = '#f5a623';
+            
+            setTimeout(() => {
+                counterElement.style.transform = 'scale(1)';
+                counterElement.style.color = '';
+            }, 300);
+            
+            // Also update with page load count (increments on each load)
+            let pageLoads = localStorage.getItem('portfolioPageLoads') || 0;
+            pageLoads = parseInt(pageLoads) + 1;
+            localStorage.setItem('portfolioPageLoads', pageLoads);
+            
+            console.log(`Total unique visitors: ${displayCount}, Page loads: ${pageLoads}`);
         }
         
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
+        // Initialize visitor counter
+        document.addEventListener('DOMContentLoaded', updateVisitorCounter);
+        
+        // Add click effect to counter
+        document.getElementById('visitorCounter').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 200);
+            
+            // Show a quick message
+            const originalText = this.querySelector('span:not(.counter-number)').textContent;
+            this.querySelector('span:not(.counter-number)').textContent = 'Thanks for visiting!';
+            
+            setTimeout(() => {
+                this.querySelector('span:not(.counter-number)').textContent = originalText;
+            }, 1000);
+        });
+        
+        // Fix for iOS viewport height issues
+        function setVH() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
         }
-
-        // --- 4. Simple Visitor Counter Simulation ---
-        // (Kept simple for this version)
-        document.addEventListener('DOMContentLoaded', () => {
-            let count = localStorage.getItem('visitorCount') || 450;
-            let sessionKey = 'hasVisitedSession';
-            
-            if (!sessionStorage.getItem(sessionKey)) {
-                count++;
-                localStorage.setItem('visitorCount', count);
-                sessionStorage.setItem(sessionKey, 'true');
+        
+        setVH();
+        window.addEventListener('resize', setVH);
+        
+        // Prevent zoom on double-tap (iOS)
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
             }
-            
-            document.getElementById('counterNumber').innerText = count;
-            document.getElementById('pageViews').innerText = "Total Views: " + count;
+            lastTouchEnd = now;
+        }, false);
+        
+        // Handle orientation change
+        window.addEventListener('orientationchange', function() {
+            setTimeout(function() {
+                // Recalculate any layout issues
+                if (window.innerHeight > window.innerWidth) {
+                    // Portrait mode
+                    console.log('Portrait mode');
+                } else {
+                    // Landscape mode
+                    console.log('Landscape mode');
+                }
+            }, 300);
         });
     </script>
 </body>
