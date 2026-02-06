@@ -18,7 +18,7 @@
             --secondary-color: #2d5aa0;
             --accent-color: #f5a623;
             --tech-color: #2ecc71;
-            --video-color: #e74c3c; /* New color for video button */
+            --video-color: #e74c3c;
             --light-color: #f8f9fa;
             --dark-color: #333333;
             --gray-color: #6c757d;
@@ -343,20 +343,22 @@
             border-radius: 4px;
         }
         
+        /* UPDATED BUTTON STYLES FOR COMPACTNESS */
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
             color: white;
-            padding: 12px 25px;
+            padding: 10px 15px; /* Reduced padding */
             border-radius: var(--border-radius);
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            font-size: 1rem;
-            margin: 5px;
+            font-size: 0.9rem; /* Reduced font size */
+            margin: 2px; /* Reduced margin */
             text-align: center;
+            white-space: nowrap; /* Prevent text wrap inside button */
         }
         
         .btn:hover {
@@ -372,8 +374,8 @@
         .btn-tech:hover {
             background-color: #27ae60;
         }
-        
-        /* New Button Style for Presentation */
+
+        /* Added Video Button Style */
         .btn-video {
             background-color: var(--video-color);
         }
@@ -392,11 +394,12 @@
             color: var(--primary-color);
         }
         
+        /* UPDATED HERO BUTTONS CONTAINER */
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 8px; /* Reduced gap */
             margin-top: 30px;
         }
         
@@ -550,7 +553,7 @@
         .skill-level-80 { width: 80%; }
         .skill-level-75 { width: 75%; }
 
-        /* Presentation Section Styles (NEW) */
+        /* Presentation Section Styles */
         .presentation-section {
             background-color: white;
         }
