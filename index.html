@@ -18,6 +18,7 @@
             --secondary-color: #2d5aa0;
             --accent-color: #f5a623;
             --tech-color: #2ecc71;
+            --video-color: #e74c3c;
             --light-color: #f8f9fa;
             --dark-color: #333333;
             --gray-color: #6c757d;
@@ -342,20 +343,22 @@
             border-radius: 4px;
         }
         
+        /* UPDATED BUTTON STYLES FOR COMPACTNESS */
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
             color: white;
-            padding: 12px 25px;
+            padding: 10px 15px; /* Reduced padding */
             border-radius: var(--border-radius);
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            font-size: 1rem;
-            margin: 5px;
+            font-size: 0.9rem; /* Reduced font size */
+            margin: 2px; /* Reduced margin */
             text-align: center;
+            white-space: nowrap; /* Prevent text wrap inside button */
         }
         
         .btn:hover {
@@ -371,6 +374,15 @@
         .btn-tech:hover {
             background-color: #27ae60;
         }
+
+        /* Added Video Button Style */
+        .btn-video {
+            background-color: var(--video-color);
+        }
+        
+        .btn-video:hover {
+            background-color: #c0392b;
+        }
         
         .btn-outline {
             background-color: transparent;
@@ -382,11 +394,12 @@
             color: var(--primary-color);
         }
         
+        /* UPDATED HERO BUTTONS CONTAINER */
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 8px; /* Reduced gap */
             margin-top: 30px;
         }
         
@@ -539,6 +552,27 @@
         .skill-level-85 { width: 85%; }
         .skill-level-80 { width: 80%; }
         .skill-level-75 { width: 75%; }
+
+        /* Presentation Section Styles */
+        .presentation-section {
+            background-color: white;
+        }
+
+        .video-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--light-gray);
+            background-color: black;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
         
         .certifications-section {
             background-color: var(--light-color);
@@ -1056,20 +1090,17 @@
     </style>
 </head>
 <body>
-    <!-- Visitor Counter -->
     <div class="visitor-counter" id="visitorCounter">
         <i class="fas fa-eye"></i>
         <span>Visitors:</span>
         <span class="counter-number" id="counterNumber">Loading...</span>
     </div>
 
-    <!-- Certificate Modal -->
     <div id="certificateModal" class="modal">
         <span class="close-modal" id="closeModal">&times;</span>
         <img class="modal-content" id="modalImage">
     </div>
 
-    <!-- Header & Navigation -->
     <header>
         <div class="container">
             <nav class="navbar">
@@ -1082,6 +1113,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#tech-skills">Technical</a></li>
+                    <li><a href="#presentation">Presentation</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -1090,7 +1122,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
@@ -1102,6 +1133,7 @@
                     <div class="hero-buttons">
                         <a href="#contact" class="btn">Get In Touch</a>
                         <a href="#tech-skills" class="btn btn-tech">Technical Skills</a>
+                        <a href="#presentation" class="btn btn-video"><i class="fas fa-play-circle"></i> Watch Presentation</a>
                         <a href="#experience" class="btn btn-outline">View Experience</a>
                     </div>
                 </div>
@@ -1117,7 +1149,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="container">
             <div class="section-header">
@@ -1156,7 +1187,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section class="skills-section" id="skills">
         <div class="container">
             <div class="section-header">
@@ -1211,7 +1241,6 @@
         </div>
     </section>
 
-    <!-- Technical Skills Section -->
     <section class="tech-skills-section" id="tech-skills">
         <div class="container">
             <div class="section-header">
@@ -1287,7 +1316,23 @@
         </div>
     </section>
 
-    <!-- Certifications Section - SIMPLE IMAGE DISPLAY -->
+    <section class="presentation-section" id="presentation">
+        <div class="container">
+            <div class="section-header">
+                <h2>Video Presentation</h2>
+            </div>
+            <div class="video-wrapper">
+                <video controls controlsList="nodownload" poster="">
+                    <source src="https://github.com/chethanktr/portfolio/raw/main/Chethan_Kumar%20(1).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div style="text-align: center; margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p>A brief overview of my professional background, technical expertise, and operational philosophy.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="certifications-section" id="certifications">
         <div class="container">
             <div class="section-header">
@@ -1295,12 +1340,10 @@
             </div>
             
             <div class="certificates-grid">
-                <!-- Certificate 1 -->
                 <div class="certificate-image-container">
                     <img src="cert1.jpg" alt="Certificate 1" class="certificate-img" data-img="cert1.jpg">
                 </div>
                 
-                <!-- Certificate 2 -->
                 <div class="certificate-image-container">
                     <img src="cert2.jpg" alt="Certificate 2" class="certificate-img" data-img="cert2.jpg">
                 </div>
@@ -1308,7 +1351,6 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience">
         <div class="container">
             <div class="section-header">
@@ -1374,7 +1416,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-header">
@@ -1421,7 +1462,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="social-links">
@@ -1710,3 +1750,4 @@
     </script>
 </body>
 </html>
+
