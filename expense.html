@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 10px 10px 0 0;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        .balance-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-align: right;
+        }
+
+        .balance-card h3 {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .balance-card .amount {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 0 0 10px 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .savings-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .savings-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .savings-input label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .savings-input input {
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            width: 150px;
+        }
+
+        .resource-select {
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            background: white;
+        }
+
+        .months-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .month-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .month-header {
+            background: #f8f9fa;
+            padding: 15px;
+            border-bottom: 2px solid #667eea;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .month-header h3 {
+            color: #333;
+            font-size: 18px;
+        }
+
+        .month-total {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .expenses-list {
+            padding: 15px;
+        }
+
+        .expense-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .expense-item:last-child {
+            border-bottom: none;
+        }
+
+        .expense-category {
+            color: #555;
+            font-weight: 500;
+        }
+
+        .expense-amount {
+            font-weight: 600;
+            color: #e74c3c;
+        }
+
+        .add-expense {
+            display: flex;
+            gap: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .add-expense input, .add-expense select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            flex: 1;
+        }
+
+        .add-expense button {
+            padding: 8px 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .add-expense button:hover {
+            background: #5a67d8;
+        }
+
+        .summary-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .summary-item {
+            text-align: center;
+        }
+
+        .summary-item h4 {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .summary-item .value {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5a67d8;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .eod-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Expense Manager</h1>
+            <div class="balance-card">
+                <h3>Available Balance</h3>
+                <div class="amount" id="availableBalance">$0.00</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="savings-section">
+                <div class="savings-input">
+                    <label>💰 Savings:</label>
+                    <input type="number" id="savingsInput" value="21250" step="0.01">
+                </div>
+                <div class="savings-input">
+                    <label>🏦 Resource:</label>
+                    <select id="resourceSelect" class="resource-select">
+                        <option value="Mashraq">Mashraq</option>
+                        <option value="EOD">EOD</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="updateSavings()">Update</button>
+            </div>
+
+            <div class="months-container" id="monthsContainer">
+                <!-- Months will be dynamically inserted here -->
+            </div>
+
+            <div class="eod-info" id="eodInfo">
+                <span>📈 EOD Calculation</span>
+                <span id="eodValue">Savings - Total Expenses = $0.00</span>
+            </div>
+
+            <div class="summary-section" id="summarySection">
+                <!-- Summary will be dynamically inserted here -->
+            </div>
+
+            <div style="margin-top: 20px; display: flex; gap: 10px;">
+                <button class="btn btn-primary" onclick="addNewMonth()">+ Add New Month</button>
+                <button class="btn btn-danger" onclick="resetToDefault()">Reset to Default</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initial data structure based on the Excel sheet
+        let appData = {
+            savings: 21250,
+            resource: "Mashraq",
+            months: [
+                {
+                    name: "March Month",
+                    total: 5764,
+                    expenses: [
+                        { category: "INDIA", amount: 1250 },
+                        { category: "Rent", amount: 1900 },
+                        { category: "Gym", amount: 262 },
+                        { category: "EMI", amount: 1602 },
+                        { category: "Expenses", amount: 750 }
+                    ]
+                },
+                {
+                    name: "April Month",
+                    total: 5764,
+                    expenses: [
+                        { category: "INDIA", amount: 1250 },
+                        { category: "Rent", amount: 1900 },
+                        { category: "Gym", amount: 262 },
+                        { category: "EMI", amount: 1602 },
+                        { category: "Expenses", amount: 750 }
+                    ]
+                },
+                {
+                    name: "May Month",
+                    total: 5764,
+                    expenses: [
+                        { category: "INDIA", amount: 1250 },
+                        { category: "Rent", amount: 1900 },
+                        { category: "Gym", amount: 262 },
+                        { category: "EMI", amount: 1602 },
+                        { category: "Expenses", amount: 750 }
+                    ]
+                }
+            ]
+        };
+
+        function calculateMonthTotal(expenses) {
+            return expenses.reduce((sum, expense) => sum + expense.amount, 0);
+        }
+
+        function calculateTotalExpenses() {
+            return appData.months.reduce((sum, month) => sum + month.total, 0);
+        }
+
+        function calculateAvailableBalance() {
+            return appData.savings - calculateTotalExpenses();
+        }
+
+        function updateUI() {
+            // Update savings and resource display
+            document.getElementById('savingsInput').value = appData.savings;
+            document.getElementById('resourceSelect').value = appData.resource;
+            
+            // Update months display
+            const monthsContainer = document.getElementById('monthsContainer');
+            monthsContainer.innerHTML = '';
+            
+            appData.months.forEach((month, monthIndex) => {
+                const monthCard = document.createElement('div');
+                monthCard.className = 'month-card';
+                
+                let expensesHtml = '';
+                month.expenses.forEach((expense, expenseIndex) => {
+                    expensesHtml += `
+                        <div class="expense-item">
+                            <span class="expense-category">${expense.category}</span>
+                            <span class="expense-amount">$${expense.amount.toFixed(2)}</span>
+                            <button onclick="deleteExpense(${monthIndex}, ${expenseIndex})" style="background: none; border: none; color: #e74c3c; cursor: pointer;">✕</button>
+                        </div>
+                    `;
+                });
+
+                monthCard.innerHTML = `
+                    <div class="month-header">
+                        <h3>${month.name}</h3>
+                        <span class="month-total">$${month.total.toFixed(2)}</span>
+                    </div>
+                    <div class="expenses-list">
+                        ${expensesHtml}
+                    </div>
+                    <div class="add-expense">
+                        <input type="text" id="newCategory${monthIndex}" placeholder="Category" value="INDIA">
+                        <input type="number" id="newAmount${monthIndex}" placeholder="Amount" step="0.01">
+                        <select id="newCategorySelect${monthIndex}" style="display: none;">
+                            <option value="INDIA">INDIA</option>
+                            <option value="Rent">Rent</option>
+                            <option value="Gym">Gym</option>
+                            <option value="EMI">EMI</option>
+                            <option value="Expenses">Expenses</option>
+                        </select>
+                        <button onclick="addExpense(${monthIndex})">Add</button>
+                    </div>
+                `;
+                
+                monthsContainer.appendChild(monthCard);
+            });
+
+            // Update EOD info
+            const totalExpenses = calculateTotalExpenses();
+            const availableBalance = calculateAvailableBalance();
+            document.getElementById('eodValue').innerHTML = `${appData.savings.toFixed(2)} - ${totalExpenses.toFixed(2)} = $${availableBalance.toFixed(2)}`;
+            document.getElementById('availableBalance').innerHTML = `$${availableBalance.toFixed(2)}`;
+
+            // Update summary
+            const summarySection = document.getElementById('summarySection');
+            summarySection.innerHTML = `
+                <div class="summary-item">
+                    <h4>Total Savings</h4>
+                    <div class="value">$${appData.savings.toFixed(2)}</div>
+                </div>
+                <div class="summary-item">
+                    <h4>Total Expenses</h4>
+                    <div class="value">$${totalExpenses.toFixed(2)}</div>
+                </div>
+                <div class="summary-item">
+                    <h4>Remaining Balance</h4>
+                    <div class="value">$${availableBalance.toFixed(2)}</div>
+                </div>
+                <div class="summary-item">
+                    <h4>Resource</h4>
+                    <div class="value">${appData.resource}</div>
+                </div>
+            `;
+        }
+
+        function updateSavings() {
+            const newSavings = parseFloat(document.getElementById('savingsInput').value);
+            const newResource = document.getElementById('resourceSelect').value;
+            
+            if (!isNaN(newSavings) && newSavings >= 0) {
+                appData.savings = newSavings;
+                appData.resource = newResource;
+                updateUI();
+            }
+        }
+
+        function addExpense(monthIndex) {
+            const categoryInput = document.getElementById(`newCategory${monthIndex}`);
+            const amountInput = document.getElementById(`newAmount${monthIndex}`);
+            const category = categoryInput.value.trim();
+            const amount = parseFloat(amountInput.value);
+            
+            if (category && !isNaN(amount) && amount > 0) {
+                appData.months[monthIndex].expenses.push({ category, amount });
+                appData.months[monthIndex].total = calculateMonthTotal(appData.months[monthIndex].expenses);
+                updateUI();
+            }
+        }
+
+        function deleteExpense(monthIndex, expenseIndex) {
+            appData.months[monthIndex].expenses.splice(expenseIndex, 1);
+            appData.months[monthIndex].total = calculateMonthTotal(appData.months[monthIndex].expenses);
+            updateUI();
+        }
+
+        function addNewMonth() {
+            const monthNames = ["June", "July", "August", "September", "October", "November", "December"];
+            const newMonthName = `${monthNames[appData.months.length - 3]} Month`;
+            
+            appData.months.push({
+                name: newMonthName,
+                total: 5764,
+                expenses: [
+                    { category: "INDIA", amount: 1250 },
+                    { category: "Rent", amount: 1900 },
+                    { category: "Gym", amount: 262 },
+                    { category: "EMI", amount: 1602 },
+                    { category: "Expenses", amount: 750 }
+                ]
+            });
+            
+            updateUI();
+        }
+
+        function resetToDefault() {
+            appData = {
+                savings: 21250,
+                resource: "Mashraq",
+                months: [
+                    {
+                        name: "March Month",
+                        total: 5764,
+                        expenses: [
+                            { category: "INDIA", amount: 1250 },
+                            { category: "Rent", amount: 1900 },
+                            { category: "Gym", amount: 262 },
+                            { category: "EMI", amount: 1602 },
+                            { category: "Expenses", amount: 750 }
+                        ]
+                    },
+                    {
+                        name: "April Month",
+                        total: 5764,
+                        expenses: [
+                            { category: "INDIA", amount: 1250 },
+                            { category: "Rent", amount: 1900 },
+                            { category: "Gym", amount: 262 },
+                            { category: "EMI", amount: 1602 },
+                            { category: "Expenses", amount: 750 }
+                        ]
+                    },
+                    {
+                        name: "May Month",
+                        total: 5764,
+                        expenses: [
+                            { category: "INDIA", amount: 1250 },
+                            { category: "Rent", amount: 1900 },
+                            { category: "Gym", amount: 262 },
+                            { category: "EMI", amount: 1602 },
+                            { category: "Expenses", amount: 750 }
+                        ]
+                    }
+                ]
+            };
+            updateUI();
+        }
+
+        // Initialize the UI
+        updateUI();
+    </script>
+</body>
+</html>
