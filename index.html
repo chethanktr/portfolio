@@ -230,7 +230,7 @@
         .hero {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 120px 0 80px;
+            padding: 37.8px 0 37.8px; /* Exactly 1cm top and bottom (1cm = 37.8px) */
             margin-top: 70px;
             min-height: calc(100vh - 70px);
             display: flex;
@@ -849,7 +849,8 @@
             }
             
             .hero {
-                padding: 140px 0 100px;
+                padding: 37.8px 0 37.8px; /* Keeping exactly 1cm for tablet as well */
+                margin-top: 70px;
             }
             
             .hero-content {
@@ -947,6 +948,10 @@
             .menu-toggle {
                 display: none !important;
             }
+            
+            .hero {
+                padding: 37.8px 0 37.8px; /* Exactly 1cm top and bottom for desktop */
+            }
         }
         
         /* Mobile menu styles */
@@ -1026,6 +1031,10 @@
             .stat-number {
                 font-size: 1.8rem;
             }
+            
+            .hero {
+                padding: 25px 0 25px; /* Smaller padding for mobile */
+            }
         }
         
         /* Small mobile styles */
@@ -1079,6 +1088,10 @@
             
             .timeline-content {
                 padding: 15px;
+            }
+            
+            .hero {
+                padding: 20px 0 20px; /* Smaller padding for small mobile */
             }
         }
         
@@ -1156,7 +1169,7 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I am a strategic operations and customer success leader with extensive experience in driving operational excellence, customer satisfaction, and scalable service delivery across technology-driven environments.</p>
+                    <p>I am an Operations Manager who speaks the language of engineers. With 14+ years of experience, I bridge the gap between high-level business strategy and deep technical execution. I don't just manage people; I engineer efficiency. Whether it's writing Python scripts to automate workflows, leveraging AI agents to optimize processes, or leading data collection across global markets, I build systems that allow teams to scale. My approach combines the empathy of a Customer Success leader with the precision of a Technical Analyst.</p>
                     <p>Currently based in Dubai, UAE with an employment visa, I specialize in operations management, customer success, data governance, service delivery, and team leadership, with recent focus on <strong>data operations supporting machine learning pipelines</strong> and <strong>technical automation</strong>.</p>
                     <p>My technical expertise extends to <strong>AI prompting, Python script execution, Unix command line operations, and deployment automation</strong>, which I leverage to optimize workflows and enhance operational efficiency.</p>
                 </div>
@@ -1197,22 +1210,25 @@
                     <h3><i class="fas fa-cogs"></i> Operations Management</h3>
                     <ul class="skill-list">
                         <li><i class="fas fa-check-circle"></i> Process Optimisation</li>
-                        <li><i class="fas fa-check-circle"></i> Service Management</li>
+                        <li><i class="fas fa-check-circle"></i> Service Delivery</li>
                         <li><i class="fas fa-check-circle"></i> SLA Management</li>
                         <li><i class="fas fa-check-circle"></i> Agile Operations & Systems</li>
                         <li><i class="fas fa-check-circle"></i> Performance Management</li>
                         <li><i class="fas fa-check-circle"></i> Quality Assurance</li>
+                        <li><i class="fas fa-check-circle"></i> Data Management & Governance</li>
+                        <li><i class="fas fa-check-circle"></i> Continuous Improvement</li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-users"></i> Customer Success</h3>
                     <ul class="skill-list">
                         <li><i class="fas fa-check-circle"></i> Customer Journey Optimisation</li>
-                        <li><i class="fas fa-check-circle"></i> Contact Centre Management</li>
-                        <li><i class="fas fa-check-circle"></i> Loyalty Programs</li>
+                        <li><i class="fas fa-check-circle"></i> Client Retention</li>
+                        <li><i class="fas fa-check-circle"></i> Stakeholder Collaboration</li>
                         <li><i class="fas fa-check-circle"></i> Cross-Functional Collaboration</li>
                         <li><i class="fas fa-check-circle"></i> Client Onboarding</li>
                         <li><i class="fas fa-check-circle"></i> Customer Analytics</li>
+                        <li><i class="fas fa-check-circle"></i> FCR, AHT</li>
                     </ul>
                 </div>
                 <div class="skill-category">
@@ -1224,6 +1240,7 @@
                         <li><i class="fas fa-check-circle"></i> Advanced Excel & Reporting</li>
                         <li><i class="fas fa-check-circle"></i> Reporting Dashboards</li>
                         <li><i class="fas fa-check-circle"></i> Technical Support Operations</li>
+                        <li><i class="fas fa-check-circle"></i> Web Hosting</li>
                     </ul>
                 </div>
                 <div class="skill-category">
@@ -1252,7 +1269,7 @@
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>AI Prompting Expert</h3>
-                    <p>Expert in crafting effective prompts for AI models, optimizing outputs for business applications, and integrating AI tools into operational workflows.</p>
+                    <p>Expert in crafting effective prompts for AI models (ChatGPT, DeepSeek, Gemini), optimizing outputs for business applications, and integrating AI tools into operational workflows.</p>
                     <div class="skill-level">
                         <div class="skill-level-bar skill-level-90"></div>
                     </div>
@@ -1284,8 +1301,8 @@
                     <div class="tech-icon">
                         <i class="fas fa-cloud-upload-alt"></i>
                     </div>
-                    <h3>Deployment Automation</h3>
-                    <p>Experienced in deployment processes, CI/CD pipeline concepts, environment management, and release automation for operational systems.</p>
+                    <h3>Machine Deployments</h3>
+                    <p>Experienced in machine deployments, pre-deployment site surveys, hardware setup, and live troubleshooting to ensure seamless integration.</p>
                     <div class="skill-level">
                         <div class="skill-level-bar skill-level-75"></div>
                     </div>
@@ -1307,7 +1324,7 @@
                         <i class="fas fa-tools"></i>
                     </div>
                     <h3>Technical Tools & Systems</h3>
-                    <p>Salesforce CRM, HRIS Systems, Advanced Excel, Reporting Dashboards, Web Hosting environments, and technical support operations.</p>
+                    <p>Salesforce CRM, HRIS Systems, Advanced Excel, Reporting Dashboards, Slack, Notion, and technical support operations.</p>
                     <div class="skill-level">
                         <div class="skill-level-bar skill-level-90"></div>
                     </div>
@@ -1366,10 +1383,13 @@
                         <h4>Operations Manager</h4>
                         <span class="company">DTEK.ai, Dubai, UAE</span>
                         <ul>
-                            <li>Architected and executed enterprise data strategies to improve data quality, accessibility, and security for ML pipelines</li>
-                            <li>Diagnosed inefficiencies across data pipelines and instituted best-practice workflows with automation scripting</li>
-                            <li>Leveraged AI prompting techniques to optimize data processing and model validation workflows</li>
-                            <li>Implemented Unix-based automation for data processing and deployment operations</li>
+                            <li>Acted as the operational backbone for machine learning projects, managing the flow of data, hardware, and human resources to meet strict SLAs</li>
+                            <li>Strategic Data Governance: Architected enterprise data strategies to ensure high-quality datasets for Machine Learning model validation. Managed large-scale data collection campaigns across diverse markets including Saudi Arabia, Qatar, and New Zealand</li>
+                            <li>Team Building & Flexible Staffing: Managed the full recruitment lifecycle for operations executives. Built and deployed agile teams of freelancers for temporary projects, ensuring 100% SLA compliance during peak demands</li>
+                            <li>Technical QA & Testing: Conducted end-to-end software and hardware testing, serving as the feedback loop between Operations and the Technical/ML teams to report bugs and refine product performance</li>
+                            <li>AI-Driven Optimization: Modernized operational workflows by integrating AI agents (ChatGPT, DeepSeek, Gemini) to reduce manual overhead and accelerate reporting</li>
+                            <li>Deployment & Client Service: Managed on-site client deployments, including pre-deployment site surveys, hardware setup, and live troubleshooting to ensure seamless integration</li>
+                            <li>R&D Procurement: Oversaw the procurement and inventory management of specialized hardware, ensuring the R&D team had the resources needed for innovation without delay</li>
                         </ul>
                     </div>
                     <div class="timeline-date">Feb 2024 - Present</div>
@@ -1377,27 +1397,13 @@
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>Senior Operations Manager</h4>
-                        <span class="company">Global Technologies, Dubai, UAE</span>
-                        <ul>
-                            <li>Led cross-functional teams to optimize operational workflows and improve service delivery metrics by 25%</li>
-                            <li>Implemented data-driven strategies to enhance customer satisfaction and retention rates</li>
-                            <li>Managed budget planning and resource allocation for operational excellence</li>
-                            <li>Developed and executed strategic initiatives to scale operations across multiple regions</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-date">Jan 2020 - Jan 2024</div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
                         <h4>Customer Success Team Lead</h4>
                         <span class="company">DTEK.ai, Dubai, UAE</span>
                         <ul>
-                            <li>Steered a team of customer success specialists to consistently surpass satisfaction targets</li>
-                            <li>Utilized Python scripts for customer data analysis and feedback processing</li>
-                            <li>Integrated technical solutions with customer success workflows</li>
-                            <li>Applied AI tools for customer sentiment analysis and predictive support</li>
+                            <li>Regional Leadership: Steered a team of 10 Customer Success Specialists, expanding support coverage to include all GCC regions plus Turkey</li>
+                            <li>Performance & KPI Management: Established rigorous daily tracking systems and defined clear Key Performance Indicators (KPIs) to monitor team productivity. This data-driven approach provided real-time visibility into operations, ensuring the team consistently met SLA targets</li>
+                            <li>Cross-Functional Bridge: Acted as the translator between clients and the Product team, synthesizing user feedback into actionable technical roadmaps</li>
+                            <li>Onboarding Architecture: Recruited talent and redesigned the client onboarding process to reduce "time-to-value," ensuring clients became proficient with the platform faster</li>
                         </ul>
                     </div>
                     <div class="timeline-date">Jul 2022 - Feb 2024</div>
@@ -1405,13 +1411,25 @@
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <h4>People Engagement Executive</h4>
+                        <span class="company">Dukkantek (DTEK.ai), Dubai, UAE</span>
+                        <ul>
+                            <li>Talent Acquisition: Moved beyond standard keyword matching to identify talent with the right cultural and technical fit, managing end-to-end sourcing and interviewing</li>
+                            <li>Workforce Planning: Partnered with leadership to define role profiles that aligned with the company's rapid growth trajectory</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date">Mar 2022 - May 2022</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
                         <h4>Team Lead - Technical Support</h4>
                         <span class="company">GlowTouch Technologies, Mangalore, India</span>
                         <ul>
-                            <li>Directed end-to-end technical support delivery, sustaining quality scores above 90%</li>
-                            <li>Implemented Unix-based monitoring and troubleshooting procedures</li>
-                            <li>Developed automation scripts for common support scenarios</li>
-                            <li>Managed deployment processes for client hosting environments</li>
+                            <li>Technical Support Operations Leadership: Directed end-to-end technical support delivery, sustaining quality scores above 90% and achieving a CSAT of 4.65/5 across client engagements</li>
+                            <li>Workforce Management (WFM) & Optimization: Managed a 24x7 support operation using WFM systems to maximize agent availability. Focused on strict login/logout adherence and break management to minimize shrinkage, while successfully optimizing Average Handling Time (AHT) to meet efficiency targets</li>
+                            <li>SLA Management: Devised support operating models and governed Service Level Agreements (SLAs), aligning response, resolution, and quality metrics with client objectives</li>
+                            <li>Data Governance: Coached and mentored support analysts to accelerate professional growth while enforcing strict data privacy and information security standards</li>
                         </ul>
                     </div>
                     <div class="timeline-date">Jan 2014 - Dec 2021</div>
@@ -1422,10 +1440,8 @@
                         <h4>Technical Support Representative</h4>
                         <span class="company">GlowTouch Technologies, Mangalore, India</span>
                         <ul>
-                            <li>Resolved complex technical issues related to web hosting environments and server configurations</li>
-                            <li>Executed Unix commands for server monitoring and troubleshooting</li>
-                            <li>Assisted with deployment processes and environment setups</li>
-                            <li>Monitored hosting platforms in real time to anticipate outages</li>
+                            <li>Infrastructure Support: Resolved complex technical issues related to web hosting environments, server errors, and DNS configurations, ensuring client satisfaction</li>
+                            <li>Proactive Monitoring & Performance Optimisation: Monitored hosting platforms in real time to anticipate outages, prevent downtime, and optimise system performance</li>
                         </ul>
                     </div>
                     <div class="timeline-date">2009 - 2014</div>
@@ -1455,7 +1471,7 @@
                     </div>
                     <div>
                         <h3>Email</h3>
-                        <p><a href="mailto:chethan.ktr@gmail.com">chethan.ktr@gmail.com</a></p>
+                        <p><a href="mailto:chethan.ktra@gmail.com">chethan.ktra@gmail.com</a></p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1473,9 +1489,12 @@
                     </div>
                     <div>
                         <h3>LinkedIn</h3>
-                        <p><a href="https://www.linkedin.com/in/chethanktry/" target="_blank">linkedin.com/in/Chethanktry/</a></p>
+                        <p><a href="https://www.linkedin.com/in/chethanktry/" target="_blank">linkedin.com/in/chethanktry/</a></p>
                     </div>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <p><strong>Portfolio:</strong> <a href="https://chethanktry.github.io/portfolio/" target="_blank" style="color: white; text-decoration: underline;">chethanktry.github.io/portfolio/</a></p>
             </div>
         </div>
     </section>
@@ -1484,9 +1503,10 @@
         <div class="container">
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/chethanktry/" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:chethan.ktr@gmail.com" title="Send Email"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:chethan.ktra@gmail.com" title="Send Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://chethanktry.github.io/portfolio/" target="_blank" title="Portfolio"><i class="fas fa-globe"></i></a>
             </div>
-            <p class="copyright">&copy; 2023 Chethan Kumar. All Rights Reserved. | Operations, Customer Success & Technical Leadership</p>
+            <p class="copyright">&copy; 2024 Chethan Kumar. All Rights Reserved. | Operations, Customer Success & Technical Leadership</p>
             <p class="copyright" style="font-size: 0.75rem; margin-top: 10px; opacity: 0.7;">
                 <span id="pageViews">Loading visitor count...</span>
             </p>
