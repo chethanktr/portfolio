@@ -230,9 +230,9 @@
         .hero {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 20px 0 20px; /* REDUCED to 20px top and bottom */
+            padding: 37.8px 0 37.8px; /* Exactly 1cm top and bottom (1cm = 37.8px) */
             margin-top: 70px;
-            min-height: auto; /* REMOVED min-height constraint */
+            min-height: calc(100vh - 70px);
             display: flex;
             align-items: center;
         }
@@ -242,7 +242,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 30px; /* REDUCED gap */
+            gap: 40px;
             text-align: center;
         }
         
@@ -259,8 +259,8 @@
         }
         
         .profile-img {
-            width: 200px; /* SLIGHTLY REDUCED */
-            height: 200px; /* SLIGHTLY REDUCED */
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid rgba(255, 255, 255, 0.3);
@@ -272,7 +272,7 @@
         .hero h2 {
             color: white !important;
             font-size: 1.5rem;
-            margin-bottom: 20px; /* REDUCED */
+            margin-bottom: 25px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         
@@ -286,9 +286,9 @@
             position: absolute;
             background: var(--tech-color);
             color: white;
-            padding: 5px 10px; /* SLIGHTLY REDUCED */
+            padding: 6px 12px;
             border-radius: 20px;
-            font-size: 0.75rem; /* SLIGHTLY REDUCED */
+            font-size: 0.8rem;
             font-weight: 600;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             animation: float 6s ease-in-out infinite;
@@ -296,21 +296,21 @@
         }
         
         .badge-1 {
-            top: 10%;
+            top: 15%;
             left: 5%;
             animation-delay: 0s;
             background: linear-gradient(135deg, #2ecc71, #27ae60);
         }
         
         .badge-2 {
-            top: 35%;
+            top: 40%;
             right: 10%;
             animation-delay: 2s;
             background: linear-gradient(135deg, #3498db, #2980b9);
         }
         
         .badge-3 {
-            bottom: 20%;
+            bottom: 25%;
             left: 15%;
             animation-delay: 4s;
             background: linear-gradient(135deg, #9b59b6, #8e44ad);
@@ -322,9 +322,9 @@
         }
         
         .hero p {
-            font-size: 1rem; /* SLIGHTLY REDUCED */
-            margin-bottom: 20px; /* REDUCED */
-            line-height: 1.6;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.7;
         }
         
         .hero .highlight {
@@ -348,14 +348,14 @@
             display: inline-block;
             background-color: var(--accent-color);
             color: white;
-            padding: 8px 12px; /* REDUCED padding */
+            padding: 10px 15px; /* Reduced padding */
             border-radius: var(--border-radius);
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            font-size: 0.85rem; /* REDUCED font size */
+            font-size: 0.9rem; /* Reduced font size */
             margin: 2px; /* Reduced margin */
             text-align: center;
             white-space: nowrap; /* Prevent text wrap inside button */
@@ -399,8 +399,8 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 6px; /* REDUCED gap */
-            margin-top: 15px; /* REDUCED */
+            gap: 8px; /* Reduced gap */
+            margin-top: 30px;
         }
         
         .about-content {
@@ -849,15 +849,14 @@
             }
             
             .hero {
-                padding: 25px 0 25px; /* ADJUSTED for tablet - approximately 0.66cm */
+                padding: 37.8px 0 37.8px; /* Keeping exactly 1cm for tablet as well */
                 margin-top: 70px;
-                min-height: auto;
             }
             
             .hero-content {
                 flex-direction: row;
                 text-align: left;
-                gap: 40px; /* REDUCED */
+                gap: 50px;
             }
             
             .hero-text {
@@ -876,7 +875,6 @@
             
             .hero-buttons {
                 justify-content: flex-start;
-                margin-top: 15px;
             }
             
             .about-content {
@@ -927,11 +925,6 @@
                 transform: translateX(-50%);
                 width: 100px;
             }
-            
-            .profile-img {
-                width: 220px;
-                height: 220px;
-            }
         }
         
         /* Desktop styles */
@@ -957,12 +950,7 @@
             }
             
             .hero {
-                padding: 30px 0 30px; /* ADJUSTED for desktop - approximately 0.8cm */
-            }
-            
-            .profile-img {
-                width: 220px;
-                height: 220px;
+                padding: 37.8px 0 37.8px; /* Exactly 1cm top and bottom for desktop */
             }
         }
         
@@ -1008,8 +996,8 @@
             }
             
             .profile-img {
-                width: 180px;
-                height: 180px;
+                width: 200px;
+                height: 200px;
             }
             
             .tech-badge {
@@ -1045,7 +1033,7 @@
             }
             
             .hero {
-                padding: 15px 0 15px; /* Smaller padding for mobile */
+                padding: 25px 0 25px; /* Smaller padding for mobile */
             }
         }
         
@@ -1064,17 +1052,17 @@
             }
             
             .hero p {
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
             
             .btn {
-                padding: 8px 16px;
-                font-size: 0.85rem;
+                padding: 10px 20px;
+                font-size: 0.95rem;
             }
             
             .profile-img {
-                width: 150px;
-                height: 150px;
+                width: 180px;
+                height: 180px;
             }
             
             .stats {
@@ -1103,11 +1091,7 @@
             }
             
             .hero {
-                padding: 10px 0 10px; /* Minimal padding for small mobile */
-            }
-            
-            .hero-buttons {
-                gap: 5px;
+                padding: 20px 0 20px; /* Smaller padding for small mobile */
             }
         }
         
