@@ -230,7 +230,7 @@
         .hero {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 120px 0 80px;
+            padding: 100px 0 80px; /* REDUCED TOP PADDING from 120px to 100px */
             margin-top: 70px;
             min-height: calc(100vh - 70px);
             display: flex;
@@ -849,7 +849,8 @@
             }
             
             .hero {
-                padding: 140px 0 100px;
+                padding: 110px 0 100px; /* ADJUSTED for tablet - slightly reduced */
+                margin-top: 70px;
             }
             
             .hero-content {
@@ -947,6 +948,10 @@
             .menu-toggle {
                 display: none !important;
             }
+            
+            .hero {
+                padding: 100px 0 100px; /* CONSISTENT padding for desktop */
+            }
         }
         
         /* Mobile menu styles */
@@ -1026,6 +1031,10 @@
             .stat-number {
                 font-size: 1.8rem;
             }
+            
+            .hero {
+                padding: 90px 0 60px; /* REDUCED for mobile */
+            }
         }
         
         /* Small mobile styles */
@@ -1079,6 +1088,10 @@
             
             .timeline-content {
                 padding: 15px;
+            }
+            
+            .hero {
+                padding: 80px 0 50px; /* FURTHER REDUCED for small mobile */
             }
         }
         
