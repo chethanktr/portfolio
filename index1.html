@@ -19,7 +19,7 @@
             --accent-color: #f5a623;
             --tech-color: #2ecc71;
             --video-color: #e74c3c;
-            --resume-color: #9b59b6;      /* new accent for resume */
+            --resume-color: #9b59b6;      /* accent for resume */
             --light-color: #f8f9fa;
             --dark-color: #333333;
             --gray-color: #6c757d;
@@ -384,7 +384,7 @@
             background-color: #c0392b;
         }
 
-        /* NEW RESUME BUTTON STYLE */
+        /* RESUME BUTTON STYLE */
         .btn-resume {
             background-color: var(--resume-color);
         }
@@ -410,7 +410,7 @@
             margin-top: 30px;
         }
         
-        /* Resume Section (new) */
+        /* Resume Section (now placed after experience) */
         .resume-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-top: 1px solid #dee2e6;
@@ -1209,7 +1209,7 @@
                     <li><a href="#presentation">Presentation</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#resume">Resume</a></li>   <!-- new nav item -->
+                    <li><a href="#resume">Resume</a></li>   
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -1228,7 +1228,7 @@
                         <a href="#contact" class="btn">Get In Touch</a>
                         <a href="#tech-skills" class="btn btn-tech">Technical Skills</a>
                         <a href="#presentation" class="btn btn-video"><i class="fas fa-play-circle"></i> Watch Presentation</a>
-                        <a href="#resume" class="btn btn-resume"><i class="fas fa-file-pdf"></i> Download Resume</a>   <!-- prominent resume button -->
+                        <a href="#resume" class="btn btn-resume"><i class="fas fa-file-pdf"></i> Download Resume</a>   
                         <a href="#experience" class="btn btn-outline">View Experience</a>
                     </div>
                 </div>
@@ -1240,33 +1240,6 @@
                         <div class="tech-badge badge-3">Deployment</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========= NEW RESUME DOWNLOAD SECTION ========= -->
-    <section class="resume-section" id="resume">
-        <div class="container">
-            <div class="section-header">
-                <h2>Download My Resume</h2>
-            </div>
-            <div class="resume-card">
-                <div class="resume-info">
-                    <h3><i class="fas fa-file-alt"></i> Chethan Kumar – Resume</h3>
-                    <p>PDF format • Updated 2025 • Complete work history & technical skills</p>
-                </div>
-                <div class="resume-download-buttons">
-                    <a href="Resume-%20Chethan%20Kumar.pdf" download="Chethan_Kumar_Resume.pdf" class="btn-download btn-download-pdf">
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
-                    <a href="Resume-%20Chethan%20Kumar.pdf" target="_blank" class="btn-download" style="background-color: var(--primary-color);">
-                        <i class="fas fa-eye"></i> Preview
-                    </a>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 20px; color: #555;">
-                <i class="fas fa-file-pdf" style="color: var(--resume-color); margin-right: 8px;"></i> 
-                Filename: Resume- Chethan Kumar.pdf (already on server)
             </div>
         </div>
     </section>
@@ -1554,6 +1527,29 @@
                         </ul>
                     </div>
                     <div class="timeline-date">2009 - 2014</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= RESUME DOWNLOAD SECTION (MOVED AFTER EXPERIENCE) ========= -->
+    <section class="resume-section" id="resume">
+        <div class="container">
+            <div class="section-header">
+                <h2>Download My Resume</h2>
+            </div>
+            <div class="resume-card">
+                <div class="resume-info">
+                    <h3><i class="fas fa-file-alt"></i> Chethan Kumar – Resume</h3>
+                    <p>PDF format • Updated 2025 • Complete work history & technical skills</p>
+                </div>
+                <div class="resume-download-buttons">
+                    <a href="Resume-%20Chethan%20Kumar.pdf" download="Chethan_Kumar_Resume.pdf" class="btn-download btn-download-pdf">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                    <a href="Resume-%20Chethan%20Kumar.pdf" target="_blank" class="btn-download" style="background-color: var(--primary-color);">
+                        <i class="fas fa-eye"></i> Preview
+                    </a>
                 </div>
             </div>
         </div>
